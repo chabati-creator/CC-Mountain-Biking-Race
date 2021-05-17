@@ -10,12 +10,19 @@ using System.Windows.Forms;
 
 namespace CC_Mountain_Biking_Race
 {
-    public partial class Form1 : Form
+    public partial class RiderTimes : Form
     {
-        public Form1()
+        public RiderTimes()
         {
             InitializeComponent();
         }
 
+        private void bttnDismiss_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Homepage window = new Homepage();
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
+        }
     }
 }

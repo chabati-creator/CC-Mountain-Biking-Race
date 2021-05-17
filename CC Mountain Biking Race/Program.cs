@@ -16,7 +16,7 @@ namespace CC_Mountain_Biking_Race
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Homepage());
         }
     }
 }
