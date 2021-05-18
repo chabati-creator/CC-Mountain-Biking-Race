@@ -72,6 +72,14 @@ namespace CC_Mountain_Biking_Race
             {
                 int age = Convert.ToInt32(nudAge.Value);
 
+                string message = "The rider's details has been recorded";
+                string caption = "AddRider";
+
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                // Displays the MessageBox which inlcudes the message and caption. 
+                result = MessageBox.Show(message, caption, buttons);
                 this.Hide();                                        //AddRider screen closes
                 Homepage window = new Homepage();                   //Homepage screen opens passing the ...
                 window.FormClosed += (s, args) => this.Close();
