@@ -30,7 +30,7 @@ namespace CC_Mountain_Biking_Race
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }
-
+        
         private void addRaceTimesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();                                     //The Homepage screen closes

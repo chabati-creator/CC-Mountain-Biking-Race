@@ -15,21 +15,32 @@ namespace CC_Mountain_Biking_Race
         public string school;
         public int SchoolID;
         public int points;
-        List<int> legs = new List<int>();
+        List<Leg> legs = new List<Leg>();
 
-        public Rider(string n, string s, int a, string l)
+        public Rider(string n, string s, int a, string l, List<int> legEntered )
         {
             name = n;
             surname = s;
             age = a;
             school = l;
-        }
+            for (int i = 0; i < 4; i++)
+            {
+                legs.Add(new Leg());                    //Add 4 legs to the list
+            }
 
-        public void Riders(int t)
-        { 
-        
+            foreach (int legIndex in legEntered)
+            {
+                legs[legIndex].setEntered(true);
+            }
+
             
         }
+
+        public bool legStatusChecked()
+        {
+ 
+        }
+
 
     }
 }

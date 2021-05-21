@@ -39,15 +39,10 @@ namespace CC_Mountain_Biking_Race
             this.lblSchool = new System.Windows.Forms.Label();
             this.txbSchool = new System.Windows.Forms.TextBox();
             this.lblLegs = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chbx4 = new System.Windows.Forms.CheckBox();
-            this.chbx3 = new System.Windows.Forms.CheckBox();
-            this.chbx2 = new System.Windows.Forms.CheckBox();
-            this.chbx1 = new System.Windows.Forms.CheckBox();
             this.bttnDetails = new System.Windows.Forms.Button();
             this.bttnDismiss = new System.Windows.Forms.Button();
             this.nudAge = new System.Windows.Forms.NumericUpDown();
-            this.groupBox1.SuspendLayout();
+            this.chlbx = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +106,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.Location = new System.Drawing.Point(74, 243);
+            this.lblAge.Location = new System.Drawing.Point(74, 238);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(47, 20);
             this.lblAge.TabIndex = 8;
@@ -121,7 +116,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblSchool.AutoSize = true;
             this.lblSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchool.Location = new System.Drawing.Point(74, 300);
+            this.lblSchool.Location = new System.Drawing.Point(74, 292);
             this.lblSchool.Name = "lblSchool";
             this.lblSchool.Size = new System.Drawing.Size(72, 20);
             this.lblSchool.TabIndex = 10;
@@ -130,7 +125,7 @@ namespace CC_Mountain_Biking_Race
             // txbSchool
             // 
             this.txbSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSchool.Location = new System.Drawing.Point(195, 295);
+            this.txbSchool.Location = new System.Drawing.Point(195, 287);
             this.txbSchool.Name = "txbSchool";
             this.txbSchool.Size = new System.Drawing.Size(162, 28);
             this.txbSchool.TabIndex = 11;
@@ -145,62 +140,10 @@ namespace CC_Mountain_Biking_Race
             this.lblLegs.TabIndex = 12;
             this.lblLegs.Text = "Select Legs:";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.chbx4);
-            this.groupBox1.Controls.Add(this.chbx3);
-            this.groupBox1.Controls.Add(this.chbx2);
-            this.groupBox1.Controls.Add(this.chbx1);
-            this.groupBox1.Location = new System.Drawing.Point(195, 329);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(284, 53);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            // 
-            // chbx4
-            // 
-            this.chbx4.AutoSize = true;
-            this.chbx4.Location = new System.Drawing.Point(207, 22);
-            this.chbx4.Name = "chbx4";
-            this.chbx4.Size = new System.Drawing.Size(66, 21);
-            this.chbx4.TabIndex = 7;
-            this.chbx4.Text = "Leg 4";
-            this.chbx4.UseVisualStyleBackColor = true;
-            // 
-            // chbx3
-            // 
-            this.chbx3.AutoSize = true;
-            this.chbx3.Location = new System.Drawing.Point(144, 22);
-            this.chbx3.Name = "chbx3";
-            this.chbx3.Size = new System.Drawing.Size(66, 21);
-            this.chbx3.TabIndex = 6;
-            this.chbx3.Text = "Leg 3";
-            this.chbx3.UseVisualStyleBackColor = true;
-            // 
-            // chbx2
-            // 
-            this.chbx2.AutoSize = true;
-            this.chbx2.Location = new System.Drawing.Point(75, 22);
-            this.chbx2.Name = "chbx2";
-            this.chbx2.Size = new System.Drawing.Size(66, 21);
-            this.chbx2.TabIndex = 5;
-            this.chbx2.Text = "Leg 2";
-            this.chbx2.UseVisualStyleBackColor = true;
-            // 
-            // chbx1
-            // 
-            this.chbx1.AutoSize = true;
-            this.chbx1.Location = new System.Drawing.Point(6, 22);
-            this.chbx1.Name = "chbx1";
-            this.chbx1.Size = new System.Drawing.Size(66, 21);
-            this.chbx1.TabIndex = 4;
-            this.chbx1.Text = "Leg 1";
-            this.chbx1.UseVisualStyleBackColor = true;
-            // 
             // bttnDetails
             // 
             this.bttnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnDetails.Location = new System.Drawing.Point(90, 398);
+            this.bttnDetails.Location = new System.Drawing.Point(90, 427);
             this.bttnDetails.Name = "bttnDetails";
             this.bttnDetails.Size = new System.Drawing.Size(189, 37);
             this.bttnDetails.TabIndex = 14;
@@ -211,7 +154,7 @@ namespace CC_Mountain_Biking_Race
             // bttnDismiss
             // 
             this.bttnDismiss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnDismiss.Location = new System.Drawing.Point(285, 398);
+            this.bttnDismiss.Location = new System.Drawing.Point(285, 427);
             this.bttnDismiss.Name = "bttnDismiss";
             this.bttnDismiss.Size = new System.Drawing.Size(188, 37);
             this.bttnDismiss.TabIndex = 15;
@@ -222,7 +165,7 @@ namespace CC_Mountain_Biking_Race
             // nudAge
             // 
             this.nudAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAge.Location = new System.Drawing.Point(195, 241);
+            this.nudAge.Location = new System.Drawing.Point(195, 236);
             this.nudAge.Maximum = new decimal(new int[] {
             20,
             0,
@@ -242,15 +185,29 @@ namespace CC_Mountain_Biking_Race
             0,
             0});
             // 
+            // chlbx
+            // 
+            this.chlbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chlbx.FormattingEnabled = true;
+            this.chlbx.Items.AddRange(new object[] {
+            "Leg 1",
+            "Leg 2",
+            "Leg 3",
+            "Leg 4"});
+            this.chlbx.Location = new System.Drawing.Point(195, 332);
+            this.chlbx.Name = "chlbx";
+            this.chlbx.Size = new System.Drawing.Size(136, 89);
+            this.chlbx.TabIndex = 17;
+            // 
             // AddRider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 476);
+            this.Controls.Add(this.chlbx);
             this.Controls.Add(this.nudAge);
             this.Controls.Add(this.bttnDismiss);
             this.Controls.Add(this.bttnDetails);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblLegs);
             this.Controls.Add(this.txbSchool);
             this.Controls.Add(this.lblSchool);
@@ -263,8 +220,6 @@ namespace CC_Mountain_Biking_Race
             this.Controls.Add(this.lblHeading);
             this.Name = "AddRider";
             this.Text = "AddRider";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -283,13 +238,9 @@ namespace CC_Mountain_Biking_Race
         private System.Windows.Forms.Label lblSchool;
         private System.Windows.Forms.TextBox txbSchool;
         private System.Windows.Forms.Label lblLegs;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bttnDetails;
         private System.Windows.Forms.Button bttnDismiss;
-        private System.Windows.Forms.CheckBox chbx4;
-        private System.Windows.Forms.CheckBox chbx3;
-        private System.Windows.Forms.CheckBox chbx2;
-        private System.Windows.Forms.CheckBox chbx1;
         private System.Windows.Forms.NumericUpDown nudAge;
+        private System.Windows.Forms.CheckedListBox chlbx;
     }
 }
