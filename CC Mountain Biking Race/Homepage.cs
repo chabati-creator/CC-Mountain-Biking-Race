@@ -12,6 +12,7 @@ namespace CC_Mountain_Biking_Race
 {
     public partial class Homepage : Form
     {
+        Rider r;
         public Homepage()
         {
             InitializeComponent();

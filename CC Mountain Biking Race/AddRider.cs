@@ -37,44 +37,61 @@ namespace CC_Mountain_Biking_Race
 
             if (txbName.Text == "")
             {
-                //txbName.BackColor = Color.LightPink; // The background colour would change to light pink when the text box is blank
-                //string caption = "Error";
-                //string message = "The Name textbox cannot be empty. Please enter the rider's name";
-                //MessageBoxButtons buttons = MessageBoxButtons.OK;
-                //DialogResult result;
+                txbName.BackColor = Color.LightPink; // The background colour would change to light pink when the text box is blank
+                string caption = "Error";
+                string message = "The Name textbox cannot be empty. Please enter the rider's name";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
 
-                ////Displays the MessageBox which inlcudes the message and caption. 
-                //result = MessageBox.Show(message, caption, buttons);
-                //txbName.Focus();
+                //Displays the MessageBox which inlcudes the message and caption. 
+                result = MessageBox.Show(message, caption, buttons);
+                txbName.Focus();
             }
             else
                 txbName.BackColor = Color.White; //Will change the backgroud colour back to white when input is valid (textbox not blank)
             if (txbSurname.Text == "")
             {
-                //txbSurname.BackColor = Color.LightPink;
-                //string caption = "Error";
-                //string message = "The Surname textbox cannot be empty. Please enter the rider's surname";
-                //MessageBoxButtons buttons = MessageBoxButtons.OK;
-                //DialogResult result;
+                txbSurname.BackColor = Color.LightPink;
+                string caption = "Error";
+                string message = "The Surname textbox cannot be empty. Please enter the rider's surname";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
 
-                //result = MessageBox.Show(message, caption, buttons);
-                //txbSurname.Focus();
+                result = MessageBox.Show(message, caption, buttons);
+                txbSurname.Focus();
             }
             else
                 txbSurname.BackColor = Color.White;
             if (txbSchool.Text == "")
             {
-                //txbSchool.BackColor = Color.LightPink;
-                //string caption = "Error";
-                //string message = "The School textbox cannot be empty. Please enter the rider's school";
-                //MessageBoxButtons buttons = MessageBoxButtons.OK;
-                //DialogResult result;
+                txbSchool.BackColor = Color.LightPink;
+                string caption = "Error";
+                string message = "The School textbox cannot be empty. Please enter the rider's school";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
 
-                //result = MessageBox.Show(message, caption, buttons);
-                //txbSchool.Focus();
+                result = MessageBox.Show(message, caption, buttons);
+                txbSchool.Focus();
             }
             else
+                txbSchool.BackColor = Color.White;
+
+            if (chlbx.CheckedItems.Count == 0)
             {
+                string caption = "Error";
+                string message = "Please select which leg(s) the rider is entering in.";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+            }
+
+
+            if (txbName.Text != "" && txbSurname.Text != "" && txbSchool.Text != "" &&
+                chlbx.CheckedItems.Count !=0)      // if all the textboxes are not blank and
+                                                   // the user has selected a leg(race) the program continues
+            {
+
                 int age = Convert.ToInt32(nudAge.Value);
 
                 List<int> enteredLegIndices = new List<int>();
@@ -83,7 +100,6 @@ namespace CC_Mountain_Biking_Race
                 {
                     enteredLegIndices.Add(legIndex);
                 }
-            
 
                 r = new Rider(name, surname, age, school, enteredLegIndices);
 

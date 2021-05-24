@@ -59,7 +59,7 @@ namespace CC_Mountain_Biking_Race
             // lblHeading2
             // 
             this.lblHeading2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeading2.Location = new System.Drawing.Point(74, 58);
+            this.lblHeading2.Location = new System.Drawing.Point(63, 50);
             this.lblHeading2.Name = "lblHeading2";
             this.lblHeading2.Size = new System.Drawing.Size(394, 49);
             this.lblHeading2.TabIndex = 3;
@@ -70,7 +70,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(74, 132);
+            this.lblName.Location = new System.Drawing.Point(63, 132);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(63, 20);
             this.lblName.TabIndex = 4;
@@ -79,7 +79,7 @@ namespace CC_Mountain_Biking_Race
             // txbName
             // 
             this.txbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbName.Location = new System.Drawing.Point(195, 127);
+            this.txbName.Location = new System.Drawing.Point(211, 127);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(162, 28);
             this.txbName.TabIndex = 5;
@@ -88,7 +88,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblSurname.AutoSize = true;
             this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname.Location = new System.Drawing.Point(74, 187);
+            this.lblSurname.Location = new System.Drawing.Point(63, 187);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(89, 20);
             this.lblSurname.TabIndex = 6;
@@ -97,7 +97,7 @@ namespace CC_Mountain_Biking_Race
             // txbSurname
             // 
             this.txbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSurname.Location = new System.Drawing.Point(195, 182);
+            this.txbSurname.Location = new System.Drawing.Point(211, 182);
             this.txbSurname.Name = "txbSurname";
             this.txbSurname.Size = new System.Drawing.Size(162, 28);
             this.txbSurname.TabIndex = 7;
@@ -106,7 +106,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.Location = new System.Drawing.Point(74, 238);
+            this.lblAge.Location = new System.Drawing.Point(63, 238);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(47, 20);
             this.lblAge.TabIndex = 8;
@@ -116,7 +116,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblSchool.AutoSize = true;
             this.lblSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchool.Location = new System.Drawing.Point(74, 292);
+            this.lblSchool.Location = new System.Drawing.Point(63, 292);
             this.lblSchool.Name = "lblSchool";
             this.lblSchool.Size = new System.Drawing.Size(72, 20);
             this.lblSchool.TabIndex = 10;
@@ -125,7 +125,7 @@ namespace CC_Mountain_Biking_Race
             // txbSchool
             // 
             this.txbSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSchool.Location = new System.Drawing.Point(195, 287);
+            this.txbSchool.Location = new System.Drawing.Point(211, 287);
             this.txbSchool.Name = "txbSchool";
             this.txbSchool.Size = new System.Drawing.Size(162, 28);
             this.txbSchool.TabIndex = 11;
@@ -134,11 +134,11 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblLegs.AutoSize = true;
             this.lblLegs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLegs.Location = new System.Drawing.Point(74, 349);
+            this.lblLegs.Location = new System.Drawing.Point(63, 349);
             this.lblLegs.Name = "lblLegs";
-            this.lblLegs.Size = new System.Drawing.Size(115, 20);
+            this.lblLegs.Size = new System.Drawing.Size(129, 20);
             this.lblLegs.TabIndex = 12;
-            this.lblLegs.Text = "Select Legs:";
+            this.lblLegs.Text = "Select Leg(s):";
             // 
             // bttnDetails
             // 
@@ -165,7 +165,7 @@ namespace CC_Mountain_Biking_Race
             // nudAge
             // 
             this.nudAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAge.Location = new System.Drawing.Point(195, 236);
+            this.nudAge.Location = new System.Drawing.Point(211, 236);
             this.nudAge.Maximum = new decimal(new int[] {
             20,
             0,
@@ -194,7 +194,7 @@ namespace CC_Mountain_Biking_Race
             "Leg 2",
             "Leg 3",
             "Leg 4"});
-            this.chlbx.Location = new System.Drawing.Point(195, 332);
+            this.chlbx.Location = new System.Drawing.Point(211, 332);
             this.chlbx.Name = "chlbx";
             this.chlbx.Size = new System.Drawing.Size(136, 89);
             this.chlbx.TabIndex = 17;

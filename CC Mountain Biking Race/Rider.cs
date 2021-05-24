@@ -32,13 +32,12 @@ namespace CC_Mountain_Biking_Race
             {
                 legs[legIndex].setEntered(true);
             }
-
-            
         }
+
+        //Make a method that gets the list
 
         public bool legStatusChecked()
         {
- 
         }
 
 

@@ -23,10 +23,10 @@ namespace CC_Mountain_Biking_Race
             this.entered = entered;
         }
 
-        public string getStatusLeg()
-        {
-            return statusLeg;
-        }
+        //public string getStatusLeg()
+        //{
+        //    return statusLeg;
+        //}
     }
 
 
