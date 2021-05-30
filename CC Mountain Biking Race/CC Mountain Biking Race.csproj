@@ -62,6 +62,7 @@
       <DependentUpon>AddRider.cs</DependentUpon>
     </Compile>
     <Compile Include="Rider.cs" />
+    <Compile Include="RiderManager.cs" />
     <Compile Include="RiderTimes.cs">
       <SubType>Form</SubType>
     </Compile>

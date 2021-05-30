@@ -11,6 +11,7 @@ namespace CC_Mountain_Biking_Race
         private bool entered;
         private int startTime;
         private int endTime;
+        private string riderSummary;
         
 
         public Leg()
@@ -23,10 +24,18 @@ namespace CC_Mountain_Biking_Race
             this.entered = entered;
         }
 
-        //public string getStatusLeg()
+        public bool getStatusLeg()
+        {
+            return entered;
+        }
+
+
+        //public string getRiderSummary()
         //{
-        //    return statusLeg;
+        //    return riderSummary + "";
         //}
+
+
     }
 
 

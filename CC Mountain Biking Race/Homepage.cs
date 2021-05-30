@@ -12,9 +12,10 @@ namespace CC_Mountain_Biking_Race
 {
     public partial class Homepage : Form
     {
-        Rider r;
-        public Homepage()
+        RiderManager rm;
+        public Homepage(RiderManager rm)
         {
+            this.rm = rm;
             InitializeComponent();
         }
 
@@ -27,7 +28,7 @@ namespace CC_Mountain_Biking_Race
         {
             this.Hide();                                     //The Homepage screen closes
             //Play window = new Play(p, 0);                    //addRider screen opens passing the n(name and surname) and the leg = 0 for Low stake
-            AddRider window = new AddRider();
+            AddRider window = new AddRider(rm);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }
@@ -35,7 +36,7 @@ namespace CC_Mountain_Biking_Race
         private void addRaceTimesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();                                     //The Homepage screen closes
-            RiderTimes window = new RiderTimes();
+            RiderTimes window = new RiderTimes(rm);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }

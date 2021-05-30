@@ -32,7 +32,6 @@ namespace CC_Mountain_Biking_Race
             this.lblHeading = new System.Windows.Forms.Label();
             this.lblHeading2 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.txbRider = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbttn4 = new System.Windows.Forms.RadioButton();
             this.rbttn3 = new System.Windows.Forms.RadioButton();
@@ -46,6 +45,7 @@ namespace CC_Mountain_Biking_Race
             this.txbEnd = new System.Windows.Forms.TextBox();
             this.bttnResults = new System.Windows.Forms.Button();
             this.bttnDismiss = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,14 +78,6 @@ namespace CC_Mountain_Biking_Race
             this.lblName.Size = new System.Drawing.Size(125, 20);
             this.lblName.TabIndex = 5;
             this.lblName.Text = "Search Rider:";
-            // 
-            // txbRider
-            // 
-            this.txbRider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbRider.Location = new System.Drawing.Point(181, 147);
-            this.txbRider.Name = "txbRider";
-            this.txbRider.Size = new System.Drawing.Size(162, 28);
-            this.txbRider.TabIndex = 6;
             // 
             // groupBox1
             // 
@@ -162,6 +154,7 @@ namespace CC_Mountain_Biking_Race
             this.bttnSearch.TabIndex = 16;
             this.bttnSearch.Text = "Search Rider";
             this.bttnSearch.UseVisualStyleBackColor = true;
+            this.bttnSearch.Click += new System.EventHandler(this.bttnSearch_Click);
             // 
             // lblEnd
             // 
@@ -220,11 +213,21 @@ namespace CC_Mountain_Biking_Race
             this.bttnDismiss.UseVisualStyleBackColor = true;
             this.bttnDismiss.Click += new System.EventHandler(this.bttnDismiss_Click);
             // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(177, 147);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(183, 28);
+            this.listView1.TabIndex = 23;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // RiderTimes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 503);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.bttnDismiss);
             this.Controls.Add(this.bttnResults);
             this.Controls.Add(this.txbEnd);
@@ -234,7 +237,6 @@ namespace CC_Mountain_Biking_Race
             this.Controls.Add(this.bttnSearch);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblLegs);
-            this.Controls.Add(this.txbRider);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblHeading2);
             this.Controls.Add(this.lblHeading);
@@ -252,7 +254,6 @@ namespace CC_Mountain_Biking_Race
         private System.Windows.Forms.Label lblHeading;
         private System.Windows.Forms.Label lblHeading2;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txbRider;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbttn4;
         private System.Windows.Forms.RadioButton rbttn3;
@@ -266,5 +267,6 @@ namespace CC_Mountain_Biking_Race
         private System.Windows.Forms.TextBox txbEnd;
         private System.Windows.Forms.Button bttnResults;
         private System.Windows.Forms.Button bttnDismiss;
+        private System.Windows.Forms.ListView listView1;
     }
 }

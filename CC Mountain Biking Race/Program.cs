@@ -14,9 +14,12 @@ namespace CC_Mountain_Biking_Race
         [STAThread]
         static void Main()
         {
+            RiderManager rm = new RiderManager();
+            rm.loadRiders();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Homepage());
+            Application.Run(new Homepage(rm));
         }
     }
 }

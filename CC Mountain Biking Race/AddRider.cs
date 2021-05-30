@@ -12,18 +12,19 @@ namespace CC_Mountain_Biking_Race
 {
     public partial class AddRider : Form
     {
-        Rider r;
+        RiderManager rm;
 
-        public AddRider()
+        public AddRider(RiderManager rm)
         {
-
+            this.rm = rm;
             InitializeComponent();
         }
 
         private void bttnDismiss_Click(object sender, EventArgs e)
-        {
+        {   
+            //Add Rider Screen closes and Homepage opens
             this.Hide();
-            Homepage window = new Homepage();
+            Homepage window = new Homepage(rm);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }
@@ -35,15 +36,15 @@ namespace CC_Mountain_Biking_Race
             string surname = txbSurname.Text;
             string school = txbSchool.Text;
 
-            if (txbName.Text == "")
+            if (txbName.Text == "") //If the Name textbox is blank then do the following
             {
-                txbName.BackColor = Color.LightPink; // The background colour would change to light pink when the text box is blank
+                txbName.BackColor = Color.LightPink; //The background colour would change to light pink
                 string caption = "Error";
                 string message = "The Name textbox cannot be empty. Please enter the rider's name";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
 
-                //Displays the MessageBox which inlcudes the message and caption. 
+                //Displays the MessageBox showing an error message informing the user that the name textbox is blank 
                 result = MessageBox.Show(message, caption, buttons);
                 txbName.Focus();
             }
@@ -76,13 +77,13 @@ namespace CC_Mountain_Biking_Race
             else
                 txbSchool.BackColor = Color.White;
 
-            if (chlbx.CheckedItems.Count == 0)
+            if (chlbx.CheckedItems.Count == 0) //If the user has not selected a leg(s) then do the following
             {
                 string caption = "Error";
                 string message = "Please select which leg(s) the rider is entering in.";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
-
+                //Display a message box showing an error message informing the user that they have not selected a leg(s)
                 result = MessageBox.Show(message, caption, buttons);
             }
 
@@ -101,11 +102,13 @@ namespace CC_Mountain_Biking_Race
                     enteredLegIndices.Add(legIndex);
                 }
 
-                r = new Rider(name, surname, age, school, enteredLegIndices);
+                rm.AddRider(name, surname, age, school, enteredLegIndices);
 
-                r.legStatusChecked();
+                //Shows the user True/False depending if the check box is checked or not
+                //MessageBox.Show(r.legStatusChecked());
 
-                string message = "The rider's details has been recorded";
+                //Shows the user a rider summary including the rider's name, surname, age, school and selected legs
+                string message = rm.lastRiderSummary();
                 string caption = "AddRider";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
@@ -113,7 +116,7 @@ namespace CC_Mountain_Biking_Race
                 result = MessageBox.Show(message, caption, buttons);
 
                 this.Hide();                                        //AddRider screen closes
-                Homepage window = new Homepage();                   //Homepage screen opens passing the ...
+                Homepage window = new Homepage(rm);                   //Homepage screen opens passing the ...
                 window.FormClosed += (s, args) => this.Close();
                 window.Show();
             }
