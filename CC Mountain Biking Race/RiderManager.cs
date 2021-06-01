@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace CC_Mountain_Biking_Race
     public class RiderManager
     {
         List<Rider> riders = new List<Rider>();
-        List<string> riderData = new List<string>();
+        
         public RiderManager()
         {
 
@@ -32,17 +33,27 @@ namespace CC_Mountain_Biking_Race
             if (File.Exists("Rider.txt"))
             {
                 //MessageBox.Show("File found");
+
                 // Read a text file line by line.  
                 string[] lines = File.ReadAllLines("Rider.txt");
 
                 foreach (string line in lines)
-                    MessageBox.Show(line);
+                {
+                    //MessageBox.Show(line);
+                    string[] riderData = line.Split();
 
-                    //riderData = lines;
-                    //List<string> dataList = lines.Split();
-                    //List<string> legData = dataList[5].Split('#');
-                    //List<int> legsEntered = new List<int> { Convert.ToInt32(legData[0]) };
-                    //List<Rider> r = new Rider(riderData[0], riderData[1], riderData[2], riderData[3]);
+                    string[] legData = riderData[4].Split('#');
+                    List<int> legsEntered = new List<int>();
+                    for (int i = 0; i < 4; i++)
+                    {
+                        int leg = Convert.ToInt32(legData[i]);
+                        legsEntered.Add(leg);
+                    }
+                    
+                    riders.Add(new Rider(riderData[0], riderData[1], Convert.ToInt32(riderData[2]), riderData[3], legsEntered));
+                    MessageBox.Show(riders[riders.Count - 1].riderSummary());
+                }
+                    
 
 
 

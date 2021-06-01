@@ -9,9 +9,9 @@ namespace CC_Mountain_Biking_Race
     class Leg
     {
         private bool entered;
-        private int startTime;
-        private int endTime;
-        private string riderSummary;
+        //private int startTime;
+        //private int endTime;
+        //private string riderSummary;
         
 
         public Leg()
@@ -28,7 +28,6 @@ namespace CC_Mountain_Biking_Race
         {
             return entered;
         }
-
 
         //public string getRiderSummary()
         //{

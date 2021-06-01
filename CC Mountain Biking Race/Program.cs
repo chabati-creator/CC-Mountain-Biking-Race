@@ -15,6 +15,7 @@ namespace CC_Mountain_Biking_Race
         static void Main()
         {
             RiderManager rm = new RiderManager();
+            //Load riders from a txt file to act as permanent riders
             rm.loadRiders();
 
             Application.EnableVisualStyles();
