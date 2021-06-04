@@ -19,12 +19,12 @@ namespace CC_Mountain_Biking_Race
             entered = false;
         }
 
-        public void setEntered(bool entered)
+        public void SetEntered(bool entered)
         {
             this.entered = entered;
         }
 
-        public bool getStatusLeg()
+        public bool GetStatusLeg()
         {
             return entered;
         }

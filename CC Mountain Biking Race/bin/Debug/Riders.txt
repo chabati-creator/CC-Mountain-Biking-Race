@@ -1,0 +1,4 @@
+Charles,Batistis,17,CHBC,0#2
+John,Wait,17,CHBC,0#1#2#3
+Naya,Mugot,17,CHBC,2#3
+C,B,12,CHBC,0#2

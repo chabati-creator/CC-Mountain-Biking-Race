@@ -154,7 +154,7 @@ namespace CC_Mountain_Biking_Race
             this.bttnSearch.TabIndex = 16;
             this.bttnSearch.Text = "Search Rider";
             this.bttnSearch.UseVisualStyleBackColor = true;
-            this.bttnSearch.Click += new System.EventHandler(this.bttnSearch_Click);
+            this.bttnSearch.Click += new System.EventHandler(this.BttnSearch_Click);
             // 
             // lblEnd
             // 
@@ -211,7 +211,7 @@ namespace CC_Mountain_Biking_Race
             this.bttnDismiss.TabIndex = 22;
             this.bttnDismiss.Text = "Dismiss";
             this.bttnDismiss.UseVisualStyleBackColor = true;
-            this.bttnDismiss.Click += new System.EventHandler(this.bttnDismiss_Click);
+            this.bttnDismiss.Click += new System.EventHandler(this.BttnDismiss_Click);
             // 
             // listView1
             // 

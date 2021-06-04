@@ -149,7 +149,7 @@ namespace CC_Mountain_Biking_Race
             this.bttnDetails.TabIndex = 14;
             this.bttnDetails.Text = "Enter Rider Details";
             this.bttnDetails.UseVisualStyleBackColor = true;
-            this.bttnDetails.Click += new System.EventHandler(this.bttnDetails_Click);
+            this.bttnDetails.Click += new System.EventHandler(this.BttnDetails_Click);
             // 
             // bttnDismiss
             // 
@@ -160,7 +160,7 @@ namespace CC_Mountain_Biking_Race
             this.bttnDismiss.TabIndex = 15;
             this.bttnDismiss.Text = "Dismiss";
             this.bttnDismiss.UseVisualStyleBackColor = true;
-            this.bttnDismiss.Click += new System.EventHandler(this.bttnDismiss_Click);
+            this.bttnDismiss.Click += new System.EventHandler(this.BttnDismiss_Click);
             // 
             // nudAge
             // 

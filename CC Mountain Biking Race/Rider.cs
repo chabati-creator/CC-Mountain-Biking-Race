@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CC_Mountain_Biking_Race
 {
@@ -15,7 +16,7 @@ namespace CC_Mountain_Biking_Race
         public string school;
         public int SchoolID;
         public int points;
-        List<Leg> legs = new List<Leg>();
+        readonly List<Leg> legs = new List<Leg>();
 
         public Rider(string n, string s, int a, string l, List<int> legEntered)
         {
@@ -30,14 +31,25 @@ namespace CC_Mountain_Biking_Race
 
             foreach (int legIndex in legEntered)
             {
-                legs[legIndex].setEntered(true);
+                legs[legIndex].SetEntered(true);
             }
+
+            //When an index (0,1,2,3) is checked if it contains Entered
+            //then use 1's and 0's to assign 1 - Entered and 2 - Not Entered
+            //for example 02 is index 0 and 2, therefore 1010
+            string boolCheck = "";
+            for (int i = 0; i < 4; i++)
+            {
+                boolCheck += Convert.ToInt32(legs[i].GetStatusLeg());
+            }
+
+            //MessageBox.Show(boolCheck);
         }
 
 
         //Create a method that shows a message box to the user a brief summary of what they entered
         //using a for loop (i) to check which leg is selected (true) and output as a string
-        public string riderSummary()
+        public string RiderSummary()
         {
             //The summary will show the rider's name, surname, age, school and the leg(s) that the rider
             //is entering in.
@@ -49,7 +61,7 @@ namespace CC_Mountain_Biking_Race
 
             for (int i = 0; i<4; i++)
 			{
-                if (legs[i].getStatusLeg())
+                if (legs[i].GetStatusLeg())
                 {
                     legstatus += $"Leg {i + 1}: Entered \n"; //If the rider is entering a leg then it will show "Entered"
                 }
@@ -63,7 +75,45 @@ namespace CC_Mountain_Biking_Race
             return summary + legstatus;
         }
 
-       
+       public string GetName()
+        {
+            return name;
+        }
+
+        public string GetSurname()
+        {
+            return surname;
+        }
+
+        public int GetAge()
+        {
+            return age;
+        }
+
+        public string GetSchool()
+        {
+            return school;
+        }
+
+        public string GetLegStatus()
+        {
+            string LegStatus = "";
+
+            int legCounter = 0;
+            foreach (var leg in legs)
+            {
+                MessageBox.Show(legCounter +" ");
+                if (leg.GetStatusLeg())
+                {
+                    LegStatus += legCounter + "#";
+                }
+                legCounter ++;
+            }
+            LegStatus = LegStatus.Remove(LegStatus.Length - 1, 1);
+            MessageBox.Show(LegStatus);
+
+            return LegStatus;
+        }
 
         //A method that gets generates True or False string which correspond to if the check box is checked
         //public string legStatusChecked()

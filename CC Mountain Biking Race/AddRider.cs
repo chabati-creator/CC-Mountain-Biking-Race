@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,15 +13,14 @@ namespace CC_Mountain_Biking_Race
 {
     public partial class AddRider : Form
     {
-        RiderManager rm;
-
+        readonly RiderManager rm;
         public AddRider(RiderManager rm)
         {
             this.rm = rm;
             InitializeComponent();
         }
 
-        private void bttnDismiss_Click(object sender, EventArgs e)
+        private void BttnDismiss_Click(object sender, EventArgs e)
         {   
             //Add Rider Screen closes and Homepage opens
             this.Hide();
@@ -29,7 +29,7 @@ namespace CC_Mountain_Biking_Race
             window.Show();
         }
 
-        private void bttnDetails_Click(object sender, EventArgs e) // Add Rider Button
+        private void BttnDetails_Click(object sender, EventArgs e) // Add Rider Button
         {
 
             string name = txbName.Text;
@@ -108,17 +108,25 @@ namespace CC_Mountain_Biking_Race
                 //MessageBox.Show(r.legStatusChecked());
 
                 //Shows the user a rider summary including the rider's name, surname, age, school and selected legs
-                string message = rm.lastRiderSummary();
+                string message = rm.LastRiderSummary();
                 string caption = "AddRider";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 // Displays the MessageBox which inlcudes the message and caption. 
                 result = MessageBox.Show(message, caption, buttons);
 
+                StreamWriter sw = new StreamWriter("Riders.txt", true);
+                sw.WriteLine("\n" + rm.GetRecentlyAddedRider().GetName() + "," + rm.GetRecentlyAddedRider().GetSurname() 
+                    + "," + rm.GetRecentlyAddedRider().GetAge() + "," + rm.GetRecentlyAddedRider().GetSchool() + "," + rm.GetRecentlyAddedRider().GetLegStatus());
+                sw.Close();
+                Console.WriteLine("Game Statistics Exported Successfully");
+
                 this.Hide();                                        //AddRider screen closes
                 Homepage window = new Homepage(rm);                   //Homepage screen opens passing the ...
                 window.FormClosed += (s, args) => this.Close();
                 window.Show();
+
+
             }
         }
     }

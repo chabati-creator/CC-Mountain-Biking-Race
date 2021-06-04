@@ -12,14 +12,14 @@ namespace CC_Mountain_Biking_Race
 {
     public partial class RiderTimes : Form
     {
-        RiderManager rm;
+        readonly RiderManager rm;
         public RiderTimes(RiderManager rm)
         {
             this.rm = rm;
             InitializeComponent();
         }
 
-        private void bttnDismiss_Click(object sender, EventArgs e)
+        private void BttnDismiss_Click(object sender, EventArgs e)
         {
             this.Hide();
             Homepage window = new Homepage(rm);
@@ -27,7 +27,7 @@ namespace CC_Mountain_Biking_Race
             window.Show();
         }
 
-        private void bttnSearch_Click(object sender, EventArgs e)
+        private void BttnSearch_Click(object sender, EventArgs e)
         {
 
         }
