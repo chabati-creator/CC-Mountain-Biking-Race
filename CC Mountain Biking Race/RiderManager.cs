@@ -9,18 +9,20 @@ using System.Windows.Forms;
 
 namespace CC_Mountain_Biking_Race
 {
+
     public class RiderManager
     {
-        readonly List<Rider> riders = new List<Rider>();
+
+        List<Rider> riders = new List<Rider>();
+
         
         public RiderManager()
         {
-
         }
 
         public void AddRider(string n, string s, int a, string l, List<int> legEntered)
         {
-            riders.Add(new Rider(n, s, a, l, legEntered));
+            riders.Add(new Rider(riders.Count + 1,n, s, a, l, legEntered));
         }
 
         public string LastRiderSummary()
@@ -37,12 +39,13 @@ namespace CC_Mountain_Biking_Race
                 // Read a text file line by line.  
                 string[] lines = File.ReadAllLines("Riders.txt");
 
+
                 foreach (string line in lines)
                 {
                     //MessageBox.Show(line);
                     string[] riderData = line.Split(','); //not string[] riderData = line.Split();
 
-                    string[] legData = riderData[4].Split('#');
+                    string[] legData = riderData[5].Split('#');
                     List<int> legsEntered = new List<int>();
                     for (int i = 0; i < legData.Length; i++)
                     {
@@ -58,15 +61,14 @@ namespace CC_Mountain_Biking_Race
                     //To check which index contains true/Entered (Index 0,1,2,or 3)
                     //MessageBox.Show(legcheck);
 
-                    riders.Add(new Rider(riderData[0], riderData[1], Convert.ToInt32(riderData[2]), riderData[3], legsEntered));
-
+                    riders.Add(new Rider(Convert.ToInt32(riderData[0]), riderData[1], riderData[2], Convert.ToInt32(riderData[3]), riderData[4], legsEntered));
+                  
                     //When an index (0,1,2,3) is checked if it contains Entered
                     //then use 1's and 0's to assign 1 - Entered and 2 - Not Entered
                     //Then message box shows the rider summary which shows the legs they have entered or not
-                    
-                    //MessageBox.Show(riders[riders.Count - 1].RiderSummary());
 
-                    //now work on exporting legstatus as index for entered (true) legs or the search rider function
+                    //MessageBox.Show(riders[riders.Count - 1].RiderSummary());
+                    
                 }
 
             }
@@ -79,6 +81,38 @@ namespace CC_Mountain_Biking_Race
         public Rider GetRecentlyAddedRider()
         {
             return riders[riders.Count - 1];
+            
+        }
+
+        public List<Rider> GetRiders()
+        {   
+            //Returning all the riders details
+            return riders;
+        }
+
+        //Create a method that retrieves the rider's ID and get the legs entered
+        //A method that searches the ID of all the riders
+        public int SearchID(int riderID)
+        {
+            int i = 0;
+            int riderIndex = -1;
+            bool flag = false;
+            while (i < riders.Count && flag == false )
+            {
+                if (riderID == riders[i].GetRiderID())
+                {
+                    flag = true;
+                    riderIndex = i;
+                }
+                i++;
+            }
+            return riderIndex;
+
+        }
+        //Return rider object
+        public Rider GetRider(int riderIndex)
+        {
+            return riders[riderIndex];
         }
 
     }

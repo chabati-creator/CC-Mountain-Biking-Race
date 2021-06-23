@@ -9,13 +9,12 @@ namespace CC_Mountain_Biking_Race
     class Leg
     {
         private bool entered;
-        //private int startTime;
-        //private int endTime;
-        //private string riderSummary;
-        
+        public int startTime;
+        public int endTime;
 
         public Leg()
         {
+            //Set entered as false
             entered = false;
         }
 
@@ -26,6 +25,7 @@ namespace CC_Mountain_Biking_Race
 
         public bool GetStatusLeg()
         {
+            //Return entered as false
             return entered;
         }
 

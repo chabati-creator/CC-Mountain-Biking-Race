@@ -13,7 +13,7 @@ namespace CC_Mountain_Biking_Race
 {
     public partial class AddRider : Form
     {
-        readonly RiderManager rm;
+        RiderManager rm;
         public AddRider(RiderManager rm)
         {
             this.rm = rm;
@@ -116,12 +116,11 @@ namespace CC_Mountain_Biking_Race
                 result = MessageBox.Show(message, caption, buttons);
 
                 StreamWriter sw = new StreamWriter("Riders.txt", true);
-                sw.WriteLine("\n" + rm.GetRecentlyAddedRider().GetName() + "," + rm.GetRecentlyAddedRider().GetSurname() 
+                sw.WriteLine(rm.GetRecentlyAddedRider().GetRiderID() + "," +rm.GetRecentlyAddedRider().GetName() + "," + rm.GetRecentlyAddedRider().GetSurname() 
                     + "," + rm.GetRecentlyAddedRider().GetAge() + "," + rm.GetRecentlyAddedRider().GetSchool() + "," + rm.GetRecentlyAddedRider().GetLegStatus());
                 sw.Close();
-                Console.WriteLine("Game Statistics Exported Successfully");
 
-                this.Hide();                                        //AddRider screen closes
+                this.Hide();                                          //AddRider screen closes
                 Homepage window = new Homepage(rm);                   //Homepage screen opens passing the ...
                 window.FormClosed += (s, args) => this.Close();
                 window.Show();

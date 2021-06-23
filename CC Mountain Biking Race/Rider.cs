@@ -9,17 +9,18 @@ namespace CC_Mountain_Biking_Race
 {
     public class Rider
     {
-        public int RiderID;
+        public int riderID;
         public string name;
         public string surname;
         public int age;
         public string school;
         public int SchoolID;
         public int points;
-        readonly List<Leg> legs = new List<Leg>();
+        List<Leg> legs = new List<Leg>();
 
-        public Rider(string n, string s, int a, string l, List<int> legEntered)
+        public Rider(int ID, string n, string s, int a, string l, List<int> legEntered)
         {
+            riderID = ID;
             name = n;
             surname = s;
             age = a;
@@ -75,6 +76,10 @@ namespace CC_Mountain_Biking_Race
             return summary + legstatus;
         }
 
+        public int GetRiderID()
+        {
+            return riderID;
+        }
        public string GetName()
         {
             return name;
@@ -95,6 +100,7 @@ namespace CC_Mountain_Biking_Race
             return school;
         }
 
+        //Getting the index of the legs that the rider is entering in
         public string GetLegStatus()
         {
             string LegStatus = "";
@@ -102,7 +108,7 @@ namespace CC_Mountain_Biking_Race
             int legCounter = 0;
             foreach (var leg in legs)
             {
-                MessageBox.Show(legCounter +" ");
+                //MessageBox.Show(legCounter +" ");
                 if (leg.GetStatusLeg())
                 {
                     LegStatus += legCounter + "#";
@@ -110,22 +116,22 @@ namespace CC_Mountain_Biking_Race
                 legCounter ++;
             }
             LegStatus = LegStatus.Remove(LegStatus.Length - 1, 1);
-            MessageBox.Show(LegStatus);
+            //MessageBox.Show(LegStatus);
 
             return LegStatus;
         }
 
-        //A method that gets generates True or False string which correspond to if the check box is checked
-        //public string legStatusChecked()
-        //{
-        //    string legstatus = "";
+        public List<bool> GetEntryValue()
+        {
+            List<bool> entries = new List<bool>();
 
-        //    for (int i = 0; i < 4; i++)
-        //    {
-        //        legstatus += legs[i].getStatusLeg() + " ";
-        //    }
+            for (int i = 0; i < 4; i++)
+            {
+                entries.Add(legs[i].GetStatusLeg());
 
-        //    return legstatus;
-        //}
+            }
+            return entries;
+        }
+
     }
 }
