@@ -85,7 +85,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblLegs.AutoSize = true;
             this.lblLegs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLegs.Location = new System.Drawing.Point(46, 285);
+            this.lblLegs.Location = new System.Drawing.Point(46, 319);
             this.lblLegs.Name = "lblLegs";
             this.lblLegs.Size = new System.Drawing.Size(115, 20);
             this.lblLegs.TabIndex = 14;
@@ -95,7 +95,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblEnd.AutoSize = true;
             this.lblEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnd.Location = new System.Drawing.Point(46, 408);
+            this.lblEnd.Location = new System.Drawing.Point(46, 442);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(94, 20);
             this.lblEnd.TabIndex = 17;
@@ -105,7 +105,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblStart.AutoSize = true;
             this.lblStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStart.Location = new System.Drawing.Point(46, 352);
+            this.lblStart.Location = new System.Drawing.Point(46, 386);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(103, 20);
             this.lblStart.TabIndex = 18;
@@ -114,7 +114,7 @@ namespace CC_Mountain_Biking_Race
             // bttnUpdate
             // 
             this.bttnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnUpdate.Location = new System.Drawing.Point(305, 450);
+            this.bttnUpdate.Location = new System.Drawing.Point(305, 484);
             this.bttnUpdate.Name = "bttnUpdate";
             this.bttnUpdate.Size = new System.Drawing.Size(193, 32);
             this.bttnUpdate.TabIndex = 21;
@@ -125,7 +125,7 @@ namespace CC_Mountain_Biking_Race
             // bttnDismiss
             // 
             this.bttnDismiss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnDismiss.Location = new System.Drawing.Point(532, 450);
+            this.bttnDismiss.Location = new System.Drawing.Point(532, 484);
             this.bttnDismiss.Name = "bttnDismiss";
             this.bttnDismiss.Size = new System.Drawing.Size(217, 32);
             this.bttnDismiss.TabIndex = 22;
@@ -138,7 +138,7 @@ namespace CC_Mountain_Biking_Race
             this.listvSearch.HideSelection = false;
             this.listvSearch.Location = new System.Drawing.Point(40, 161);
             this.listvSearch.Name = "listvSearch";
-            this.listvSearch.Size = new System.Drawing.Size(838, 100);
+            this.listvSearch.Size = new System.Drawing.Size(838, 139);
             this.listvSearch.TabIndex = 23;
             this.listvSearch.UseCompatibleStateImageBehavior = false;
             this.listvSearch.SelectedIndexChanged += new System.EventHandler(this.ListvSearch_SelectedIndexChanged);
@@ -161,7 +161,7 @@ namespace CC_Mountain_Biking_Race
             this.rbttn1.TabStop = true;
             this.rbttn1.Text = "Leg 1";
             this.rbttn1.UseVisualStyleBackColor = true;
-            this.rbttn1.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
+            this.rbttn1.CheckedChanged += new System.EventHandler(this.Bttn_CheckedChanged);
             // 
             // rbttn2
             // 
@@ -173,6 +173,7 @@ namespace CC_Mountain_Biking_Race
             this.rbttn2.TabStop = true;
             this.rbttn2.Text = "Leg 2";
             this.rbttn2.UseVisualStyleBackColor = true;
+            this.rbttn2.CheckedChanged += new System.EventHandler(this.Bttn_CheckedChanged);
             // 
             // rbttn3
             // 
@@ -184,6 +185,7 @@ namespace CC_Mountain_Biking_Race
             this.rbttn3.TabStop = true;
             this.rbttn3.Text = "Leg 3";
             this.rbttn3.UseVisualStyleBackColor = true;
+            this.rbttn3.CheckedChanged += new System.EventHandler(this.Bttn_CheckedChanged);
             // 
             // rbttn4
             // 
@@ -195,6 +197,7 @@ namespace CC_Mountain_Biking_Race
             this.rbttn4.TabStop = true;
             this.rbttn4.Text = "Leg 4";
             this.rbttn4.UseVisualStyleBackColor = true;
+            this.rbttn4.CheckedChanged += new System.EventHandler(this.Bttn_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -202,7 +205,7 @@ namespace CC_Mountain_Biking_Race
             this.groupBox1.Controls.Add(this.rbttn3);
             this.groupBox1.Controls.Add(this.rbttn2);
             this.groupBox1.Controls.Add(this.rbttn1);
-            this.groupBox1.Location = new System.Drawing.Point(181, 272);
+            this.groupBox1.Location = new System.Drawing.Point(181, 306);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(284, 53);
             this.groupBox1.TabIndex = 15;
@@ -212,29 +215,31 @@ namespace CC_Mountain_Biking_Race
             // 
             this.dtpStartTime.CustomFormat = "HH:mm:ss";
             this.dtpStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartTime.Location = new System.Drawing.Point(181, 352);
+            this.dtpStartTime.Location = new System.Drawing.Point(181, 386);
             this.dtpStartTime.Name = "dtpStartTime";
             this.dtpStartTime.ShowUpDown = true;
             this.dtpStartTime.Size = new System.Drawing.Size(200, 22);
             this.dtpStartTime.TabIndex = 25;
             this.dtpStartTime.Value = new System.DateTime(2021, 6, 23, 12, 2, 34, 0);
+            this.dtpStartTime.ValueChanged += new System.EventHandler(this.DtpValueChanged);
             // 
             // dtpEndTime
             // 
             this.dtpEndTime.CustomFormat = "HH:mm:ss";
-            this.dtpEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEndTime.Location = new System.Drawing.Point(181, 408);
+            this.dtpEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEndTime.Location = new System.Drawing.Point(181, 442);
             this.dtpEndTime.Name = "dtpEndTime";
             this.dtpEndTime.ShowUpDown = true;
             this.dtpEndTime.Size = new System.Drawing.Size(200, 22);
             this.dtpEndTime.TabIndex = 25;
             this.dtpEndTime.Value = new System.DateTime(2021, 6, 23, 12, 2, 41, 0);
+            this.dtpEndTime.ValueChanged += new System.EventHandler(this.DtpValueChanged);
             // 
             // RiderTimes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 503);
+            this.ClientSize = new System.Drawing.Size(937, 527);
             this.Controls.Add(this.dtpEndTime);
             this.Controls.Add(this.dtpStartTime);
             this.Controls.Add(this.listvSearch);

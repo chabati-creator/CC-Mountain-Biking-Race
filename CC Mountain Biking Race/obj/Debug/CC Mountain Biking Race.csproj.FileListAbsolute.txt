@@ -10,3 +10,4 @@ C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC M
 C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\obj\Debug\CC_Mountain_Biking_Race.Homepage.resources
 C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\obj\Debug\CC_Mountain_Biking_Race.RiderTimes.resources
 C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\obj\Debug\CC_Mountain_Biking_Race.AddRider.resources
+C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\obj\Debug\CC_Mountain_Biking_Race.AllCompetitorResults.resources

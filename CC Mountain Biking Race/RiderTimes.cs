@@ -15,7 +15,7 @@ namespace CC_Mountain_Biking_Race
         private RiderManager rm;
         private DataTable dt;
         private DataView dv;
-        
+        private static int riderID = -1;
 
 
         public RiderTimes(RiderManager rm)
@@ -23,13 +23,17 @@ namespace CC_Mountain_Biking_Race
             this.rm = rm;
             InitializeComponent();
 
+            //Disable all the radiobuttons, datetimepickers and update button
+            //to prevent user from clicking it when they have not selected a rider
             rbttn1.Enabled = false;
             rbttn2.Enabled = false;
             rbttn3.Enabled = false;
             rbttn4.Enabled = false;
+            bttnUpdate.Enabled = false;
             dtpStartTime.Enabled = false;
             dtpEndTime.Enabled = false;
 
+            //Formatting the datetimepickers
             dtpStartTime.Format = DateTimePickerFormat.Custom;
             dtpStartTime.CustomFormat = "HH:mm:ss";
             dtpStartTime.Text = "00:00:00";
@@ -138,22 +142,12 @@ namespace CC_Mountain_Biking_Race
         {
             int legIndex;
             //MessageBox.Show(dtpStartTime.Value.ToString());
-            
-            string startTime = dtpStartTime.Text;
-            string endTime = dtpEndTime.Text;
-
-            string message = "Start Time: " + startTime + " \nEnd Time:" + endTime;
-            string caption = "AddRider";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-            
-            result = MessageBox.Show(message, caption, buttons);
 
             if (rbttn1.Checked)
             {
-                legIndex = (int)Char.GetNumericValue(rbttn1.Text[rbttn1.Text.Length - 1]) - 1;      //convert a character to an integer
-                //MessageBox.Show(legIndex+"");
-                
+                legIndex = (int)Char.GetNumericValue(rbttn1.Text[rbttn1.Text.Length - 1]) - 1;  //convert a character to an integer
+                //MessageBox.Show(legIndex + "");
+
             }
             else if (rbttn2.Checked)
             {
@@ -163,11 +157,31 @@ namespace CC_Mountain_Biking_Race
             {
                 legIndex = (int)Char.GetNumericValue(rbttn3.Text[rbttn3.Text.Length - 1]) - 1;
             }
-            else if (rbttn4.Checked)
+            else
             {
                 legIndex = (int)Char.GetNumericValue(rbttn4.Text[rbttn4.Text.Length - 1]) - 1;
             }
 
+            string startTime = dtpStartTime.Text;
+            string endTime = dtpEndTime.Text;
+            rm.SetRidersLegResults(riderID,legIndex,startTime,endTime);
+            //rm.GetLegIndex(riderID, legIndex);
+
+            string message = "------------------------ Start / End Times Summary ------------------------ \n\n"
+                                + "Competitor ID: "+ riderID + ", Name: " + rm.GetRider(rm.SearchRiderIndex(riderID)).GetSurname() 
+                                + ", " + rm.GetRider(rm.SearchRiderIndex(riderID)).GetName() 
+                                + "\nLeg: " + (legIndex+1) + " Start Time: " + startTime 
+                                + " \tEnd Time: " + endTime + "    Total Time: " + rm.GetTotalTime(riderID,legIndex);
+            string caption = "AddRider";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+
+            result = MessageBox.Show(message, caption, buttons);
+
+            this.Hide();                                          //AddRider screen closes
+            Homepage window = new Homepage(rm);                   //Homepage screen opens passing the ...
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
 
         }
 
@@ -181,16 +195,17 @@ namespace CC_Mountain_Biking_Race
 
             if (listvSearch.SelectedItems.Count == 1)
             {
-                int riderID = int.Parse(listvSearch.SelectedItems[0].Text);
+                riderID = int.Parse(listvSearch.SelectedItems[0].Text);
 
                 // fetch data for that rider
-                foundRider = rm.GetRider(rm.SearchID(riderID));
-                MessageBox.Show("Rider Found:" + foundRider.GetName());
+                foundRider = rm.GetRider(rm.SearchRiderIndex(riderID));
+                //MessageBox.Show("Rider Found:" + foundRider.GetName());
 
                 if (foundRider != null)
                 {
-                    dtpStartTime.Enabled = true;
-                    dtpEndTime.Enabled = true;
+                    //dtpStartTime.Enabled = true;
+                    //dtpEndTime.Enabled = true;
+                    //bttnUpdate.Enabled = true;
                     List<bool> rbttnvalues;
                     rbttnvalues = foundRider.GetEntryValue();
 
@@ -205,16 +220,17 @@ namespace CC_Mountain_Biking_Race
 
         }
 
-
-
-        void RadioButton_CheckedChanged(object sender, EventArgs e)
+        private void Bttn_CheckedChanged(object sender, EventArgs e)
         {
-            RadioButton rb = sender as RadioButton;
+            bttnUpdate.Enabled = true;
+            dtpStartTime.Enabled = true;
+            dtpEndTime.Enabled = true;
         }
 
-        
-
-
+        private void DtpValueChanged(object sender, EventArgs e)
+        {
+            dtpEndTime.MinDate = dtpStartTime.Value;
+        }
     }
 
 }

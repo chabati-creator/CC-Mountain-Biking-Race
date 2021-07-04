@@ -43,7 +43,7 @@ namespace CC_Mountain_Biking_Race
                 foreach (string line in lines)
                 {
                     //MessageBox.Show(line);
-                    string[] riderData = line.Split(','); //not string[] riderData = line.Split();
+                    string[] riderData = line.Split(',');
 
                     string[] legData = riderData[5].Split('#');
                     List<int> legsEntered = new List<int>();
@@ -84,15 +84,15 @@ namespace CC_Mountain_Biking_Race
             
         }
 
+        //Returning all the riders details
         public List<Rider> GetRiders()
         {   
-            //Returning all the riders details
             return riders;
         }
 
-        //Create a method that retrieves the rider's ID and get the legs entered
-        //A method that searches the ID of all the riders
-        public int SearchID(int riderID)
+        //Retrieves the rider's ID and get the legs entered
+        //Searches the ID of all the riders
+        public int SearchRiderIndex(int riderID)
         {
             int i = 0;
             int riderIndex = -1;
@@ -106,13 +106,46 @@ namespace CC_Mountain_Biking_Race
                 }
                 i++;
             }
-            return riderIndex;
-
+            return riderIndex ;
         }
+
         //Return rider object
         public Rider GetRider(int riderIndex)
         {
             return riders[riderIndex];
+        }
+
+        public void SetRidersLegResults(int riderID, int legIndex, string startTime, string endTime)
+        {
+            int riderIndex = SearchRiderIndex(riderID);
+            riders[riderIndex].SetLegResults(legIndex, startTime, endTime);
+        }
+
+        public int GetTotalTime(int riderID, int legIndex)
+        {
+            int riderIndex = SearchRiderIndex(riderID);
+            return riders[riderIndex].CalculateLegTime(legIndex);
+        }
+        public string GetRiderSummary(int riderID)
+        {
+            int riderIndex = SearchRiderIndex(riderID);
+            string ridersSummary = "Rider Summary\n";
+
+            
+            ridersSummary += riders[riderIndex].RiderResults();
+            
+            return ridersSummary;
+        }
+
+        public string GetRidersSummary()
+        {
+            string ridersSummary = "\n\n";
+
+            foreach (var rider in riders)
+            {
+                ridersSummary += rider.RiderResults() + "\n";
+            }
+            return ridersSummary;
         }
 
     }

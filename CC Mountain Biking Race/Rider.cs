@@ -14,8 +14,10 @@ namespace CC_Mountain_Biking_Race
         public string surname;
         public int age;
         public string school;
-        public int SchoolID;
-        public int points;
+        public int startTime;
+        public int endTime;
+        //public int points;
+
         List<Leg> legs = new List<Leg>();
 
         public Rider(int ID, string n, string s, int a, string l, List<int> legEntered)
@@ -131,6 +133,50 @@ namespace CC_Mountain_Biking_Race
 
             }
             return entries;
+        }
+
+        //Get the rider start times and end times
+        public void SetLegResults(int legIndex, string startTime, string endTime)
+        {
+            legs[legIndex].SetTimes(startTime, endTime);
+        }
+
+        //public int GetStartTime(int startTime)
+        //{
+        //    legs[legIndex].;
+        //}
+
+        public int CalculateLegTime(int legIndex)
+        {
+            return legs[legIndex].CalculateLegTimes();
+        }
+
+        public string RiderResults()
+        {
+
+            string summary = "Competitor ID:" + riderID + ", Name: " + surname + ", " + name + ":";
+
+            string legstatus = "";
+
+            for (int i = 0; i < 4; i++)
+            {
+
+                if (legs[i].GetStatusLeg())
+                {
+                    legstatus += $"Leg {i + 1}: Start Time: "+ legs[i].GetStartTime() 
+                                + " EndTime: " + legs[i].GetEndTime() 
+                                + " Total Time: " + legs[i].CalculateLegTimes() + "s\n";
+                    
+                }
+                else
+                {
+                    legstatus += $"Leg {i + 1}: *** Not Entered ***\n";
+                    
+                }
+
+            }
+
+            return summary + "\n" + legstatus;
         }
 
     }
