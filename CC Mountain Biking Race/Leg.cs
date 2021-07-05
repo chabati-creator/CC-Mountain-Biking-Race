@@ -14,9 +14,10 @@ namespace CC_Mountain_Biking_Race
         public string endTime = "00:00:00";
         public int totalTime;
 
-        public Leg()
+        public Leg(string startTime)
         {
             //Set entered as false
+            this.startTime = startTime;
             entered = false;
         }
 

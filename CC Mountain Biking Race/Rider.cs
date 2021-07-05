@@ -29,7 +29,7 @@ namespace CC_Mountain_Biking_Race
             school = l;
             for (int i = 0; i < 4; i++)
             {
-                legs.Add(new Leg());                    //Add 4 legs to the list
+                legs.Add(new Leg("11:00:00"));                    //Add 4 legs to the list
             }
 
             foreach (int legIndex in legEntered)
@@ -177,6 +177,20 @@ namespace CC_Mountain_Biking_Race
             }
 
             return summary + "\n" + legstatus;
+
+        }
+
+        public string IndividualResults()
+        {
+            string summary = "Competitor ID:" + riderID + ", Name: " + surname + ", " + name + ":";
+
+            return summary;
+        }
+
+        public string GetStartTime(int legIndex)
+        {
+            return legs[legIndex].GetStartTime();
+            
         }
 
     }

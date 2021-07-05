@@ -148,5 +148,21 @@ namespace CC_Mountain_Biking_Race
             return ridersSummary;
         }
 
+        public string GetIndividualScore()
+        {
+            string individualScore = "";
+
+            foreach (var rider in riders)
+            {
+                individualScore += rider.IndividualResults() + "\n";
+            }
+            return individualScore;
+        }
+
+        public string GetStartTime(int riderID, int legIndex)
+        {
+            int riderIndex = SearchRiderIndex(riderID);
+            return riders[riderIndex].GetStartTime(legIndex);
+        }
     }
 }

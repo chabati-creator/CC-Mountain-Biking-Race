@@ -16,6 +16,7 @@ namespace CC_Mountain_Biking_Race
         private DataTable dt;
         private DataView dv;
         private static int riderID = -1;
+        
 
 
         public RiderTimes(RiderManager rm)
@@ -162,6 +163,8 @@ namespace CC_Mountain_Biking_Race
                 legIndex = (int)Char.GetNumericValue(rbttn4.Text[rbttn4.Text.Length - 1]) - 1;
             }
 
+
+            //dtpStartTime.Text = rm.GetStartTime(riderID, legIndex);
             string startTime = dtpStartTime.Text;
             string endTime = dtpEndTime.Text;
             rm.SetRidersLegResults(riderID,legIndex,startTime,endTime);
@@ -222,6 +225,11 @@ namespace CC_Mountain_Biking_Race
 
         private void Bttn_CheckedChanged(object sender, EventArgs e)
         {
+            int legIndex = (int)Char.GetNumericValue(rbttn1.Text[rbttn1.Text.Length - 1]) - 1;  //convert a character to an integer
+                                                                                            //MessageBox.Show(legIndex + "");
+            dtpStartTime.Text = rm.GetStartTime(riderID, legIndex);
+            //MessageBox.Show(rm.GetStartTime(riderID, legIndex));
+
             bttnUpdate.Enabled = true;
             dtpStartTime.Enabled = true;
             dtpEndTime.Enabled = true;
@@ -229,6 +237,7 @@ namespace CC_Mountain_Biking_Race
 
         private void DtpValueChanged(object sender, EventArgs e)
         {
+
             dtpEndTime.MinDate = dtpStartTime.Value;
         }
     }

@@ -38,6 +38,8 @@ namespace CC_Mountain_Biking_Race
             this.addRaceTimesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allCompetitorResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.rtbIndScoreboard = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(53, 41);
+            this.lbl1.Location = new System.Drawing.Point(213, 45);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(437, 29);
             this.lbl1.TabIndex = 1;
@@ -56,7 +58,7 @@ namespace CC_Mountain_Biking_Race
             this.listvRiderSearch.HideSelection = false;
             this.listvRiderSearch.Location = new System.Drawing.Point(184, 139);
             this.listvRiderSearch.Name = "listvRiderSearch";
-            this.listvRiderSearch.Size = new System.Drawing.Size(180, 259);
+            this.listvRiderSearch.Size = new System.Drawing.Size(180, 289);
             this.listvRiderSearch.TabIndex = 23;
             this.listvRiderSearch.UseCompatibleStateImageBehavior = false;
             this.listvRiderSearch.SelectedIndexChanged += new System.EventHandler(this.ListvRiderSearch_SelectedIndexChanged);
@@ -91,14 +93,14 @@ namespace CC_Mountain_Biking_Race
             // addRiderToolStripMenuItem
             // 
             this.addRiderToolStripMenuItem.Name = "addRiderToolStripMenuItem";
-            this.addRiderToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.addRiderToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addRiderToolStripMenuItem.Text = "Add Rider";
             this.addRiderToolStripMenuItem.Click += new System.EventHandler(this.AddRiderToolStripMenuItem_Click);
             // 
             // addRaceTimesToolStripMenuItem
             // 
             this.addRaceTimesToolStripMenuItem.Name = "addRaceTimesToolStripMenuItem";
-            this.addRaceTimesToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.addRaceTimesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addRaceTimesToolStripMenuItem.Text = "Add RiderTimes";
             this.addRaceTimesToolStripMenuItem.Click += new System.EventHandler(this.AddRaceTimesToolStripMenuItem_Click);
             // 
@@ -117,15 +119,35 @@ namespace CC_Mountain_Biking_Race
             this.allCompetitorResultsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(540, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(883, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // rtbIndScoreboard
+            // 
+            this.rtbIndScoreboard.Location = new System.Drawing.Point(390, 139);
+            this.rtbIndScoreboard.Name = "rtbIndScoreboard";
+            this.rtbIndScoreboard.Size = new System.Drawing.Size(358, 289);
+            this.rtbIndScoreboard.TabIndex = 26;
+            this.rtbIndScoreboard.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(471, 99);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(190, 20);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Individual Scoreboard";
             // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 413);
+            this.ClientSize = new System.Drawing.Size(883, 440);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rtbIndScoreboard);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txbRiderSearch);
             this.Controls.Add(this.listvRiderSearch);
@@ -151,6 +173,8 @@ namespace CC_Mountain_Biking_Race
         private System.Windows.Forms.ToolStripMenuItem addRaceTimesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allCompetitorResultsToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.RichTextBox rtbIndScoreboard;
+        private System.Windows.Forms.Label label1;
     }
 }
 

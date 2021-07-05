@@ -3,3 +3,5 @@
 3,Naya,Mugot,17,CHBC,2#3
 4,Charles,Batistis,17,CHBC,0#1#2#3
 5,cc,cccc,12,c,0#2#3
+6,test,test,14,chbc,0#1#2
+7,cb,c,12,c,0#1#2

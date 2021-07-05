@@ -22,6 +22,11 @@ namespace CC_Mountain_Biking_Race
             this.rm = rm;
             InitializeComponent();
 
+            rtbIndScoreboard.ReadOnly = true;
+            rtbIndScoreboard.SelectionFont = new Font(rtbIndScoreboard.Font, FontStyle.Regular);
+            //Retrives all the riders results/summary
+            rtbIndScoreboard.AppendText(rm.GetIndividualScore());
+
             //Listview Properties
             listvRiderSearch.View = View.Details;
             listvRiderSearch.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
