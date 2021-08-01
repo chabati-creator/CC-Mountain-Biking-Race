@@ -32,12 +32,15 @@ namespace CC_Mountain_Biking_Race
             this.lbl1 = new System.Windows.Forms.Label();
             this.bttnDismiss = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lbl1.Location = new System.Drawing.Point(177, 16);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(273, 29);
@@ -47,7 +50,8 @@ namespace CC_Mountain_Biking_Race
             // bttnDismiss
             // 
             this.bttnDismiss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnDismiss.Location = new System.Drawing.Point(384, 401);
+            this.bttnDismiss.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.bttnDismiss.Location = new System.Drawing.Point(340, 401);
             this.bttnDismiss.Name = "bttnDismiss";
             this.bttnDismiss.Size = new System.Drawing.Size(188, 37);
             this.bttnDismiss.TabIndex = 16;
@@ -57,20 +61,45 @@ namespace CC_Mountain_Biking_Race
             // 
             // richTextBox1
             // 
+            this.richTextBox1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.richTextBox1.Location = new System.Drawing.Point(50, 56);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(522, 324);
             this.richTextBox1.TabIndex = 18;
             this.richTextBox1.Text = "";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel3.Location = new System.Drawing.Point(46, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(534, 338);
+            this.panel3.TabIndex = 34;
+            // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnExport.Location = new System.Drawing.Point(100, 401);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(188, 37);
+            this.btnExport.TabIndex = 35;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // AllCompetitorResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(621, 450);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.bttnDismiss);
             this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.panel3);
             this.Name = "AllCompetitorResults";
             this.Text = "AllCompetitorResults";
             this.ResumeLayout(false);
@@ -83,5 +112,7 @@ namespace CC_Mountain_Biking_Race
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Button bttnDismiss;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnExport;
     }
 }

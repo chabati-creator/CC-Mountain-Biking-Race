@@ -57,6 +57,12 @@
     <Compile Include="AllCompetitorResults.Designer.cs">
       <DependentUpon>AllCompetitorResults.cs</DependentUpon>
     </Compile>
+    <Compile Include="Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export.Designer.cs">
+      <DependentUpon>Export.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,14 +80,35 @@
     </Compile>
     <Compile Include="Rider.cs" />
     <Compile Include="RiderManager.cs" />
+    <Compile Include="ResultsSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultsSummary.Designer.cs">
+      <DependentUpon>ResultsSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RiderSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiderSummary.Designer.cs">
+      <DependentUpon>RiderSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="RiderTimes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RiderTimes.Designer.cs">
       <DependentUpon>RiderTimes.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimesSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimesSummary.Designer.cs">
+      <DependentUpon>TimesSummary.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AllCompetitorResults.resx">
       <DependentUpon>AllCompetitorResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export.resx">
+      <DependentUpon>Export.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
@@ -94,12 +121,22 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="AddRider.resx">
       <DependentUpon>AddRider.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResultsSummary.resx">
+      <DependentUpon>ResultsSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RiderSummary.resx">
+      <DependentUpon>RiderSummary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RiderTimes.resx">
       <DependentUpon>RiderTimes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimesSummary.resx">
+      <DependentUpon>TimesSummary.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -114,6 +151,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel edited.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

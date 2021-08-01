@@ -40,9 +40,14 @@ namespace CC_Mountain_Biking_Race
             this.txbSchool = new System.Windows.Forms.TextBox();
             this.lblLegs = new System.Windows.Forms.Label();
             this.bttnDetails = new System.Windows.Forms.Button();
-            this.bttnDismiss = new System.Windows.Forms.Button();
             this.nudAge = new System.Windows.Forms.NumericUpDown();
             this.chlbx = new System.Windows.Forms.CheckedListBox();
+            this.bttnDismiss = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +55,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblHeading.AutoSize = true;
             this.lblHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeading.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblHeading.Location = new System.Drawing.Point(42, 21);
             this.lblHeading.Name = "lblHeading";
             this.lblHeading.Size = new System.Drawing.Size(437, 29);
@@ -59,7 +65,8 @@ namespace CC_Mountain_Biking_Race
             // lblHeading2
             // 
             this.lblHeading2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeading2.Location = new System.Drawing.Point(63, 50);
+            this.lblHeading2.ForeColor = System.Drawing.Color.Peru;
+            this.lblHeading2.Location = new System.Drawing.Point(63, 54);
             this.lblHeading2.Name = "lblHeading2";
             this.lblHeading2.Size = new System.Drawing.Size(394, 49);
             this.lblHeading2.TabIndex = 3;
@@ -70,6 +77,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.SandyBrown;
             this.lblName.Location = new System.Drawing.Point(63, 132);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(63, 20);
@@ -79,7 +87,8 @@ namespace CC_Mountain_Biking_Race
             // txbName
             // 
             this.txbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbName.Location = new System.Drawing.Point(211, 127);
+            this.txbName.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.txbName.Location = new System.Drawing.Point(212, 127);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(162, 28);
             this.txbName.TabIndex = 5;
@@ -88,6 +97,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblSurname.AutoSize = true;
             this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSurname.ForeColor = System.Drawing.Color.SandyBrown;
             this.lblSurname.Location = new System.Drawing.Point(63, 187);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(89, 20);
@@ -97,7 +107,8 @@ namespace CC_Mountain_Biking_Race
             // txbSurname
             // 
             this.txbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSurname.Location = new System.Drawing.Point(211, 182);
+            this.txbSurname.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.txbSurname.Location = new System.Drawing.Point(212, 182);
             this.txbSurname.Name = "txbSurname";
             this.txbSurname.Size = new System.Drawing.Size(162, 28);
             this.txbSurname.TabIndex = 7;
@@ -106,6 +117,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAge.ForeColor = System.Drawing.Color.SandyBrown;
             this.lblAge.Location = new System.Drawing.Point(63, 238);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(47, 20);
@@ -116,6 +128,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblSchool.AutoSize = true;
             this.lblSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSchool.ForeColor = System.Drawing.Color.SandyBrown;
             this.lblSchool.Location = new System.Drawing.Point(63, 292);
             this.lblSchool.Name = "lblSchool";
             this.lblSchool.Size = new System.Drawing.Size(72, 20);
@@ -125,7 +138,8 @@ namespace CC_Mountain_Biking_Race
             // txbSchool
             // 
             this.txbSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSchool.Location = new System.Drawing.Point(211, 287);
+            this.txbSchool.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.txbSchool.Location = new System.Drawing.Point(212, 287);
             this.txbSchool.Name = "txbSchool";
             this.txbSchool.Size = new System.Drawing.Size(162, 28);
             this.txbSchool.TabIndex = 11;
@@ -134,6 +148,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblLegs.AutoSize = true;
             this.lblLegs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegs.ForeColor = System.Drawing.Color.SandyBrown;
             this.lblLegs.Location = new System.Drawing.Point(63, 349);
             this.lblLegs.Name = "lblLegs";
             this.lblLegs.Size = new System.Drawing.Size(129, 20);
@@ -142,30 +157,22 @@ namespace CC_Mountain_Biking_Race
             // 
             // bttnDetails
             // 
+            this.bttnDetails.BackColor = System.Drawing.Color.SandyBrown;
             this.bttnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnDetails.Location = new System.Drawing.Point(90, 427);
+            this.bttnDetails.ForeColor = System.Drawing.Color.SeaShell;
+            this.bttnDetails.Location = new System.Drawing.Point(81, 439);
             this.bttnDetails.Name = "bttnDetails";
-            this.bttnDetails.Size = new System.Drawing.Size(189, 37);
+            this.bttnDetails.Size = new System.Drawing.Size(183, 37);
             this.bttnDetails.TabIndex = 14;
-            this.bttnDetails.Text = "Enter Rider Details";
-            this.bttnDetails.UseVisualStyleBackColor = true;
+            this.bttnDetails.Text = "Enter";
+            this.bttnDetails.UseVisualStyleBackColor = false;
             this.bttnDetails.Click += new System.EventHandler(this.BttnDetails_Click);
-            // 
-            // bttnDismiss
-            // 
-            this.bttnDismiss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnDismiss.Location = new System.Drawing.Point(285, 427);
-            this.bttnDismiss.Name = "bttnDismiss";
-            this.bttnDismiss.Size = new System.Drawing.Size(188, 37);
-            this.bttnDismiss.TabIndex = 15;
-            this.bttnDismiss.Text = "Dismiss";
-            this.bttnDismiss.UseVisualStyleBackColor = true;
-            this.bttnDismiss.Click += new System.EventHandler(this.BttnDismiss_Click);
             // 
             // nudAge
             // 
             this.nudAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAge.Location = new System.Drawing.Point(211, 236);
+            this.nudAge.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.nudAge.Location = new System.Drawing.Point(212, 236);
             this.nudAge.Maximum = new decimal(new int[] {
             20,
             0,
@@ -188,22 +195,77 @@ namespace CC_Mountain_Biking_Race
             // chlbx
             // 
             this.chlbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chlbx.ForeColor = System.Drawing.Color.SaddleBrown;
             this.chlbx.FormattingEnabled = true;
             this.chlbx.Items.AddRange(new object[] {
             "Leg 1",
             "Leg 2",
             "Leg 3",
             "Leg 4"});
-            this.chlbx.Location = new System.Drawing.Point(211, 332);
+            this.chlbx.Location = new System.Drawing.Point(212, 332);
             this.chlbx.Name = "chlbx";
-            this.chlbx.Size = new System.Drawing.Size(136, 89);
+            this.chlbx.Size = new System.Drawing.Size(72, 89);
             this.chlbx.TabIndex = 17;
+            // 
+            // bttnDismiss
+            // 
+            this.bttnDismiss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnDismiss.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.bttnDismiss.Location = new System.Drawing.Point(285, 439);
+            this.bttnDismiss.Name = "bttnDismiss";
+            this.bttnDismiss.Size = new System.Drawing.Size(185, 37);
+            this.bttnDismiss.TabIndex = 15;
+            this.bttnDismiss.Text = "Cancel";
+            this.bttnDismiss.UseVisualStyleBackColor = true;
+            this.bttnDismiss.Click += new System.EventHandler(this.BttnDismiss_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel1.Location = new System.Drawing.Point(208, 124);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(170, 34);
+            this.panel1.TabIndex = 18;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel2.Location = new System.Drawing.Point(209, 178);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(170, 34);
+            this.panel2.TabIndex = 19;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel3.Location = new System.Drawing.Point(209, 233);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(170, 34);
+            this.panel3.TabIndex = 20;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel4.Location = new System.Drawing.Point(208, 284);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(170, 34);
+            this.panel4.TabIndex = 19;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel5.Location = new System.Drawing.Point(208, 330);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(79, 80);
+            this.panel5.TabIndex = 19;
             // 
             // AddRider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 476);
+            this.BackColor = System.Drawing.Color.SeaShell;
+            this.ClientSize = new System.Drawing.Size(527, 488);
+            this.Controls.Add(this.lblHeading2);
             this.Controls.Add(this.chlbx);
             this.Controls.Add(this.nudAge);
             this.Controls.Add(this.bttnDismiss);
@@ -216,8 +278,12 @@ namespace CC_Mountain_Biking_Race
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.txbName);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.lblHeading2);
             this.Controls.Add(this.lblHeading);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
             this.Name = "AddRider";
             this.Text = "AddRider";
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).EndInit();
@@ -242,5 +308,10 @@ namespace CC_Mountain_Biking_Race
         private System.Windows.Forms.Button bttnDismiss;
         private System.Windows.Forms.NumericUpDown nudAge;
         private System.Windows.Forms.CheckedListBox chlbx;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }

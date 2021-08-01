@@ -15,7 +15,7 @@ namespace CC_Mountain_Biking_Race
 
         List<Rider> riders = new List<Rider>();
 
-        
+        int legIndex;
         public RiderManager()
         {
         }
@@ -29,6 +29,8 @@ namespace CC_Mountain_Biking_Race
         {
             return riders[riders.Count - 1].RiderSummary();
         }
+
+        
 
         public void LoadRiders()
         {
@@ -137,6 +139,19 @@ namespace CC_Mountain_Biking_Race
             return ridersSummary;
         }
 
+        //I made a global string variable that displays the rider's times summary and passed it in the TimesSummary constructor
+        //public string RiderTimesSummary(int riderID)
+        //{
+        //    int riderIndex = SearchRiderIndex(riderID);
+        //    string timesSummary = "";
+
+        //    timesSummary += riders[riderIndex].TimesSummary();
+
+            
+        //    return timesSummary;
+
+
+        //}
         public string GetRidersSummary()
         {
             string ridersSummary = "\n\n";
@@ -148,21 +163,82 @@ namespace CC_Mountain_Biking_Race
             return ridersSummary;
         }
 
-        public string GetIndividualScore()
-        {
-            string individualScore = "";
+        //public string GetIndividualScore()
+        //{
+        //    string individualScore = "";
 
-            foreach (var rider in riders)
-            {
-                individualScore += rider.IndividualResults() + "\n";
-            }
-            return individualScore;
-        }
+        //    foreach (var rider in riders)
+        //    {
+        //        individualScore += rider.IndividualResults() + "\n";
+        //    }
+        //    return individualScore;
+        //}
 
         public string GetStartTime(int riderID, int legIndex)
         {
             int riderIndex = SearchRiderIndex(riderID);
             return riders[riderIndex].GetStartTime(legIndex);
         }
+
+        public List<Rider> GetRaceEntries(int legIndex)
+        {
+            List<Rider> raceEntries = new List<Rider>();
+            foreach (var rider in riders)
+            {
+                if (rider.GetLegStatus(legIndex) == true)
+                {
+                    raceEntries.Add(rider);
+                }
+            }
+
+            //Sort Riders by Race Times ascending
+
+            for (int i = 0; i < raceEntries.Count - 1; i++)
+            {
+                // pos will be used store the index of the highest value greather than the value referenced by index
+                //  it will start start by storing i as i potentially could be the highest value 
+                int pos = i;
+
+                // inner loop will loop through the all elemnts after i and store the index of the highest value
+                for (int j = i + 1; j < raceEntries.Count; j++)
+                {
+                    if (raceEntries[pos].CalculateLegTime(legIndex) > raceEntries[j].CalculateLegTime(legIndex))
+                    {
+                        pos = j;
+                    }
+                }
+                //swoping logic to swop cost[i] with the highest found cost i.e cost[pos]
+                Rider riderTemp = raceEntries[i];
+                raceEntries[i] = raceEntries[pos];
+                raceEntries[pos] = riderTemp;
+            }
+
+            int indexCounter = 0;
+            int indexFound = -1;
+            while (indexFound == -1 && indexCounter < raceEntries.Count)
+            {
+                if (raceEntries[indexCounter].CalculateLegTime(legIndex) > 0)
+                {
+                    indexFound = indexCounter;
+                }
+                indexCounter++;
+            }
+
+            if (indexFound > 0)
+            {
+                for (int i = 0; i < indexFound; i++)
+                {
+                    raceEntries.Add(raceEntries[i]);
+                }
+
+
+                raceEntries.RemoveRange(0, indexFound);
+            }
+            
+
+
+            return raceEntries;
+        }
+
     }
 }

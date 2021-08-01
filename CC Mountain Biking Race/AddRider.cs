@@ -18,6 +18,7 @@ namespace CC_Mountain_Biking_Race
         {
             this.rm = rm;
             InitializeComponent();
+
         }
 
         private void BttnDismiss_Click(object sender, EventArgs e)
@@ -108,12 +109,12 @@ namespace CC_Mountain_Biking_Race
                 //MessageBox.Show(r.legStatusChecked());
 
                 //Shows the user a rider summary including the rider's name, surname, age, school and selected legs
-                string message = rm.LastRiderSummary();
-                string caption = "AddRider";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-                // Displays the MessageBox which inlcudes the message and caption. 
-                result = MessageBox.Show(message, caption, buttons);
+                //string message = rm.LastRiderSummary();
+                //string caption = "AddRider";
+                //MessageBoxButtons buttons = MessageBoxButtons.OK;
+                //DialogResult result;
+                //// Displays the MessageBox which inlcudes the message and caption. 
+                //result = MessageBox.Show(message, caption, buttons);
 
                 StreamWriter sw = new StreamWriter("Riders.txt", true);
                 sw.WriteLine(rm.GetRecentlyAddedRider().GetRiderID() + "," +rm.GetRecentlyAddedRider().GetName() + "," + rm.GetRecentlyAddedRider().GetSurname() 
@@ -121,7 +122,7 @@ namespace CC_Mountain_Biking_Race
                 sw.Close();
 
                 this.Hide();                                          //AddRider screen closes
-                Homepage window = new Homepage(rm);                   //Homepage screen opens passing the ...
+                RiderSummary window = new RiderSummary(rm);           //RiderSummary screen opens passing the ...
                 window.FormClosed += (s, args) => this.Close();
                 window.Show();
 

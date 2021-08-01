@@ -16,7 +16,8 @@ namespace CC_Mountain_Biking_Race
         public string school;
         public int startTime;
         public int endTime;
-        //public int points;
+        public int totalTime;
+        public int legIndex;
 
         List<Leg> legs = new List<Leg>();
 
@@ -49,6 +50,16 @@ namespace CC_Mountain_Biking_Race
             //MessageBox.Show(boolCheck);
         }
 
+        //Instead of doing this, I just need to pass the 'message' which contains the rider's times summary
+        //and pass it in the constructor to be used in the TimesSummary form
+        //public string TimesSummary()
+        //{
+        //    string summary = "Competitor ID:" + riderID + ", Name: " + surname + ", " + name + ":";
+
+        //    string legstimes = "";
+
+        //    return summary + legstimes;
+        //}
 
         //Create a method that shows a message box to the user a brief summary of what they entered
         //using a for loop (i) to check which leg is selected (true) and output as a string
@@ -56,8 +67,8 @@ namespace CC_Mountain_Biking_Race
         {
             //The summary will show the rider's name, surname, age, school and the leg(s) that the rider
             //is entering in.
-            string summary = "The rider's details has been recorded \n\n" + "---- Rider Summary ---- \n" + "Name: " + 
-                name + "\nSurname: " + surname + "\nAge: " + age + "\nSchool: " + school + "\n---- Legs ----\n";
+            string summary = "Name: " + 
+                name + "\nSurname: " + surname + "\nAge: " + age + "\nSchool: " + school + "\n" + "\n---- Legs ----\n";
 
             string legstatus = "";
 
@@ -163,9 +174,19 @@ namespace CC_Mountain_Biking_Race
 
                 if (legs[i].GetStatusLeg())
                 {
-                    legstatus += $"Leg {i + 1}: Start Time: "+ legs[i].GetStartTime() 
-                                + " EndTime: " + legs[i].GetEndTime() 
+                    legstatus += $"Leg {i + 1}: Start Time: " + legs[i].GetStartTime()
+                                + " EndTime: ";
+
+                    if (legs[i].GetEndTime().Equals("00:00:00"))
+                    {
+                        legstatus += "NA " + "Total Time: NA\n"; 
+                    }
+                    else 
+                    {
+                        legstatus += legs[i].GetEndTime()
                                 + " Total Time: " + legs[i].CalculateLegTimes() + "s\n";
+                    }
+
                     
                 }
                 else
@@ -180,12 +201,12 @@ namespace CC_Mountain_Biking_Race
 
         }
 
-        public string IndividualResults()
-        {
-            string summary = "Competitor ID:" + riderID + ", Name: " + surname + ", " + name + ":";
+        //public string IndividualResults()
+        //{
+        //    string summary = "Competitor ID:" + riderID + ", Name: " + surname + ", " + name + ":";
 
-            return summary;
-        }
+        //    return summary;
+        //}
 
         public string GetStartTime(int legIndex)
         {
@@ -193,5 +214,9 @@ namespace CC_Mountain_Biking_Race
             
         }
 
+        public bool GetLegStatus(int legIndex)
+        {
+            return legs[legIndex].GetStatusLeg();
+        }
     }
 }
