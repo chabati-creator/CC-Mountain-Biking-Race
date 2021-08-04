@@ -29,6 +29,7 @@ namespace CC_Mountain_Biking_Race
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimesSummary));
             this.lblHeading = new System.Windows.Forms.Label();
             this.bttnDismiss = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -38,6 +39,7 @@ namespace CC_Mountain_Biking_Race
             // lblHeading
             // 
             this.lblHeading.AutoSize = true;
+            this.lblHeading.BackColor = System.Drawing.Color.SandyBrown;
             this.lblHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeading.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblHeading.Location = new System.Drawing.Point(173, 26);
@@ -61,6 +63,7 @@ namespace CC_Mountain_Biking_Race
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.richTextBox1.Location = new System.Drawing.Point(76, 73);
             this.richTextBox1.Name = "richTextBox1";
@@ -81,12 +84,18 @@ namespace CC_Mountain_Biking_Race
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(675, 207);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.bttnDismiss);
             this.Controls.Add(this.lblHeading);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TimesSummary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TimesSummary";
             this.ResumeLayout(false);
             this.PerformLayout();

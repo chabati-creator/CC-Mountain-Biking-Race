@@ -16,7 +16,6 @@ namespace CC_Mountain_Biking_Race
         private DataTable dt;
         private DataView dv;
         private static int riderID = -1;
-        private static string message;
 
 
         public RiderTimes(RiderManager rm)
@@ -104,6 +103,10 @@ namespace CC_Mountain_Biking_Race
                             
                         }
                     }
+                }
+                if (entryData[entryData.Length - 1] != "3")
+                {
+                    entryStatus[3] = "Not Entered";
                 }
 
                 dt.Rows.Add(rider.GetRiderID(), rider.GetName(), rider.GetSurname(), rider.GetAge(), rider.GetSchool(), entryStatus[0], entryStatus[1], entryStatus[2], entryStatus[3]);
@@ -247,6 +250,7 @@ namespace CC_Mountain_Biking_Race
 
             dtpEndTime.MinDate = dtpStartTime.Value;
         }
+
     }
 
 }

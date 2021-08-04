@@ -29,6 +29,7 @@ namespace CC_Mountain_Biking_Race
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultsSummary));
             this.lblHeading = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -38,6 +39,7 @@ namespace CC_Mountain_Biking_Race
             // lblHeading
             // 
             this.lblHeading.AutoSize = true;
+            this.lblHeading.BackColor = System.Drawing.Color.SandyBrown;
             this.lblHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeading.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblHeading.Location = new System.Drawing.Point(195, 20);
@@ -48,10 +50,11 @@ namespace CC_Mountain_Biking_Race
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.richTextBox1.Location = new System.Drawing.Point(61, 67);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(475, 131);
+            this.richTextBox1.Size = new System.Drawing.Size(494, 153);
             this.richTextBox1.TabIndex = 36;
             this.richTextBox1.Text = "";
             // 
@@ -60,7 +63,7 @@ namespace CC_Mountain_Biking_Race
             this.panel3.BackColor = System.Drawing.Color.NavajoWhite;
             this.panel3.Location = new System.Drawing.Point(55, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(490, 147);
+            this.panel3.Size = new System.Drawing.Size(509, 169);
             this.panel3.TabIndex = 37;
             // 
             // bttnDismiss
@@ -68,7 +71,7 @@ namespace CC_Mountain_Biking_Race
             this.bttnDismiss.BackColor = System.Drawing.Color.SandyBrown;
             this.bttnDismiss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnDismiss.ForeColor = System.Drawing.Color.SeaShell;
-            this.bttnDismiss.Location = new System.Drawing.Point(210, 238);
+            this.bttnDismiss.Location = new System.Drawing.Point(203, 240);
             this.bttnDismiss.Name = "bttnDismiss";
             this.bttnDismiss.Size = new System.Drawing.Size(183, 37);
             this.bttnDismiss.TabIndex = 38;
@@ -76,17 +79,23 @@ namespace CC_Mountain_Biking_Race
             this.bttnDismiss.UseVisualStyleBackColor = false;
             this.bttnDismiss.Click += new System.EventHandler(this.bttnDismiss_Click);
             // 
-            // RiderResults
+            // ResultsSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(602, 294);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(602, 290);
             this.Controls.Add(this.bttnDismiss);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblHeading);
-            this.Name = "RiderResults";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ResultsSummary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RiderResults";
             this.ResumeLayout(false);
             this.PerformLayout();

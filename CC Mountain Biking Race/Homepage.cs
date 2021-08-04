@@ -37,9 +37,9 @@ namespace CC_Mountain_Biking_Race
             //Add Columns
             listvScoreBoard.Columns.Add("Position");
             listvScoreBoard.Columns.Add("ID");
-            listvScoreBoard.Columns.Add("Name");
-            listvScoreBoard.Columns.Add("Surname");
-            listvScoreBoard.Columns.Add("Total Time", 80);
+            listvScoreBoard.Columns.Add("Name", 70);
+            listvScoreBoard.Columns.Add("Surname", 75);
+            listvScoreBoard.Columns.Add("Total Time", 95);
 
             //Initialise Datatable and add Columns
             dts = new DataTable();
@@ -58,7 +58,7 @@ namespace CC_Mountain_Biking_Race
 
             //Add Columns
             listvRiderSearch.Columns.Add("ID");
-            listvRiderSearch.Columns.Add("Name");
+            listvRiderSearch.Columns.Add("Name" , 64);
 
             //Initialise Datatable and add Columns
             dt = new DataTable();

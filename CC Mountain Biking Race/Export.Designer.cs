@@ -29,6 +29,7 @@ namespace CC_Mountain_Biking_Race
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Export));
             this.lbl1 = new System.Windows.Forms.Label();
             this.bttnDismiss = new System.Windows.Forms.Button();
             this.lblHeading2 = new System.Windows.Forms.Label();
@@ -36,21 +37,22 @@ namespace CC_Mountain_Biking_Race
             // 
             // lbl1
             // 
-            this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.Color.SandyBrown;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbl1.Location = new System.Drawing.Point(121, 35);
+            this.lbl1.Location = new System.Drawing.Point(153, 49);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(88, 29);
+            this.lbl1.Size = new System.Drawing.Size(122, 36);
             this.lbl1.TabIndex = 3;
             this.lbl1.Text = "Export";
+            this.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bttnDismiss
             // 
             this.bttnDismiss.BackColor = System.Drawing.Color.SandyBrown;
             this.bttnDismiss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnDismiss.ForeColor = System.Drawing.Color.SeaShell;
-            this.bttnDismiss.Location = new System.Drawing.Point(76, 171);
+            this.bttnDismiss.Location = new System.Drawing.Point(117, 208);
             this.bttnDismiss.Name = "bttnDismiss";
             this.bttnDismiss.Size = new System.Drawing.Size(188, 37);
             this.bttnDismiss.TabIndex = 37;
@@ -60,11 +62,12 @@ namespace CC_Mountain_Biking_Race
             // 
             // lblHeading2
             // 
+            this.lblHeading2.BackColor = System.Drawing.Color.Chocolate;
             this.lblHeading2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeading2.ForeColor = System.Drawing.Color.Peru;
-            this.lblHeading2.Location = new System.Drawing.Point(24, 78);
+            this.lblHeading2.ForeColor = System.Drawing.Color.SeaShell;
+            this.lblHeading2.Location = new System.Drawing.Point(64, 101);
             this.lblHeading2.Name = "lblHeading2";
-            this.lblHeading2.Size = new System.Drawing.Size(297, 72);
+            this.lblHeading2.Size = new System.Drawing.Size(297, 86);
             this.lblHeading2.TabIndex = 38;
             this.lblHeading2.Text = "All Competitor Results has been successfully exported to the AllCompetitorResults" +
     ".txt";
@@ -75,14 +78,19 @@ namespace CC_Mountain_Biking_Race
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(336, 233);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(426, 280);
             this.Controls.Add(this.lblHeading2);
             this.Controls.Add(this.bttnDismiss);
             this.Controls.Add(this.lbl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Export";
-            this.Text = "Expoert";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Export";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
