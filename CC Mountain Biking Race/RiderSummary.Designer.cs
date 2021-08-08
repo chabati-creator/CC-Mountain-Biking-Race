@@ -77,6 +77,7 @@ namespace CC_Mountain_Biking_Race
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.Color.SeaShell;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.richTextBox1.Location = new System.Drawing.Point(113, 120);

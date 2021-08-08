@@ -104,6 +104,16 @@ namespace CC_Mountain_Biking_Race
                         }
                     }
                 }
+                //if (entryData[entryData.Length - 1] != "1")
+                //{
+                //    entryStatus[1] = "Not Entered";
+                //}
+
+                //if (entryData[entryData.Length - 1] != "2")
+                //{
+                //    entryStatus[2] = "Not Entered";
+                //}
+
                 if (entryData[entryData.Length - 1] != "3")
                 {
                     entryStatus[3] = "Not Entered";
@@ -240,15 +250,27 @@ namespace CC_Mountain_Biking_Race
             dtpStartTime.Text = rm.GetStartTime(riderID, legIndex);
             //MessageBox.Show(rm.GetStartTime(riderID, legIndex));
 
-            bttnUpdate.Enabled = true;
+            if (dtpStartTime.Value == dtpEndTime.Value)
+            {
+                bttnUpdate.Enabled = false;
+            }
+            
             dtpStartTime.Enabled = true;
             dtpEndTime.Enabled = true;
         }
 
         private void DtpValueChanged(object sender, EventArgs e)
         {
-
             dtpEndTime.MinDate = dtpStartTime.Value;
+
+            if (dtpStartTime.Value == dtpEndTime.Value)
+            {
+                bttnUpdate.Enabled = false;
+            }
+            else
+            {
+                bttnUpdate.Enabled = true;
+            }
         }
 
     }

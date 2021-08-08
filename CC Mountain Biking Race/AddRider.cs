@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -34,10 +35,11 @@ namespace CC_Mountain_Biking_Race
         {
 
             string name = txbName.Text;
+
             string surname = txbSurname.Text;
             string school = txbSchool.Text;
 
-            if (txbName.Text == "") //If the Name textbox is blank then do the following
+            if (txbName.Text == "" && !Regex.IsMatch(txbName.Text, "[A-Z][a-z]")) //If the Name textbox is blank then do the following
             {
                 txbName.BackColor = Color.LightPink; //The background colour would change to light pink
                 string caption = "Error";
@@ -102,8 +104,8 @@ namespace CC_Mountain_Biking_Race
                 {
                     enteredLegIndices.Add(legIndex);
                 }
-
-                rm.AddRider(name, surname, age, school, enteredLegIndices);
+                //name[0]. = Char.ToUpper(name[0]);
+                rm.AddRider(rm.UppercaseFirst(name), rm.UppercaseFirst(surname), age, school, enteredLegIndices);
 
                 //Shows the user True/False depending if the check box is checked or not
                 //MessageBox.Show(r.legStatusChecked());

@@ -63,10 +63,12 @@ namespace CC_Mountain_Biking_Race
             // 
             // listvRiderSearch
             // 
+            this.listvRiderSearch.BackColor = System.Drawing.Color.SeaShell;
             this.listvRiderSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listvRiderSearch.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.listvRiderSearch.FullRowSelect = true;
             this.listvRiderSearch.HideSelection = false;
-            this.listvRiderSearch.Location = new System.Drawing.Point(172, 166);
+            this.listvRiderSearch.Location = new System.Drawing.Point(171, 166);
             this.listvRiderSearch.Name = "listvRiderSearch";
             this.listvRiderSearch.Size = new System.Drawing.Size(192, 333);
             this.listvRiderSearch.TabIndex = 23;
@@ -75,8 +77,9 @@ namespace CC_Mountain_Biking_Race
             // 
             // txbRiderSearch
             // 
+            this.txbRiderSearch.BackColor = System.Drawing.Color.SeaShell;
             this.txbRiderSearch.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txbRiderSearch.Location = new System.Drawing.Point(172, 105);
+            this.txbRiderSearch.Location = new System.Drawing.Point(172, 102);
             this.txbRiderSearch.Name = "txbRiderSearch";
             this.txbRiderSearch.Size = new System.Drawing.Size(192, 22);
             this.txbRiderSearch.TabIndex = 24;
@@ -89,7 +92,7 @@ namespace CC_Mountain_Biking_Race
             this.lblName.ForeColor = System.Drawing.Color.SeaShell;
             this.lblName.Location = new System.Drawing.Point(11, 100);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(150, 32);
+            this.lblName.Size = new System.Drawing.Size(150, 28);
             this.lblName.TabIndex = 25;
             this.lblName.Text = "Search Rider:";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -98,7 +101,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.allCompetitorResultsToolStripMenuItem.ForeColor = System.Drawing.Color.SaddleBrown;
             this.allCompetitorResultsToolStripMenuItem.Name = "allCompetitorResultsToolStripMenuItem";
-            this.allCompetitorResultsToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.allCompetitorResultsToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
             this.allCompetitorResultsToolStripMenuItem.Text = "All Competitor Results";
             this.allCompetitorResultsToolStripMenuItem.Click += new System.EventHandler(this.AllCompetitorResultsToolStripMenuItem_Click);
             // 
@@ -112,7 +115,7 @@ namespace CC_Mountain_Biking_Race
             this.allCompetitorResultsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(886, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(886, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -120,7 +123,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.addRiderToolStripMenuItem.ForeColor = System.Drawing.Color.SaddleBrown;
             this.addRiderToolStripMenuItem.Name = "addRiderToolStripMenuItem";
-            this.addRiderToolStripMenuItem.Size = new System.Drawing.Size(90, 26);
+            this.addRiderToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.addRiderToolStripMenuItem.Text = "Add Rider";
             this.addRiderToolStripMenuItem.Click += new System.EventHandler(this.AddRiderToolStripMenuItem_Click_1);
             // 
@@ -128,12 +131,13 @@ namespace CC_Mountain_Biking_Race
             // 
             this.addRaceTimesToolStripMenuItem.ForeColor = System.Drawing.Color.SaddleBrown;
             this.addRaceTimesToolStripMenuItem.Name = "addRaceTimesToolStripMenuItem";
-            this.addRaceTimesToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.addRaceTimesToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
             this.addRaceTimesToolStripMenuItem.Text = "Add Rider Times";
             this.addRaceTimesToolStripMenuItem.Click += new System.EventHandler(this.AddRaceTimesToolStripMenuItem_Click_1);
             // 
             // listvScoreBoard
             // 
+            this.listvScoreBoard.BackColor = System.Drawing.Color.SeaShell;
             this.listvScoreBoard.Enabled = false;
             this.listvScoreBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listvScoreBoard.ForeColor = System.Drawing.Color.SaddleBrown;
@@ -146,6 +150,7 @@ namespace CC_Mountain_Biking_Race
             // 
             // cbxLegs
             // 
+            this.cbxLegs.BackColor = System.Drawing.Color.SeaShell;
             this.cbxLegs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLegs.ForeColor = System.Drawing.Color.SaddleBrown;
             this.cbxLegs.FormattingEnabled = true;
@@ -154,7 +159,7 @@ namespace CC_Mountain_Biking_Race
             "Leg 2",
             "Leg 3",
             "Leg 4"});
-            this.cbxLegs.Location = new System.Drawing.Point(661, 103);
+            this.cbxLegs.Location = new System.Drawing.Point(664, 101);
             this.cbxLegs.Name = "cbxLegs";
             this.cbxLegs.Size = new System.Drawing.Size(191, 24);
             this.cbxLegs.TabIndex = 29;
@@ -167,7 +172,7 @@ namespace CC_Mountain_Biking_Race
             this.label1.ForeColor = System.Drawing.Color.SeaShell;
             this.label1.Location = new System.Drawing.Point(392, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 32);
+            this.label1.Size = new System.Drawing.Size(137, 28);
             this.label1.TabIndex = 27;
             this.label1.Text = "Leg Results:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,7 +182,7 @@ namespace CC_Mountain_Biking_Race
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label2.Location = new System.Drawing.Point(668, 108);
+            this.label2.Location = new System.Drawing.Point(668, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 30;
@@ -186,9 +191,9 @@ namespace CC_Mountain_Biking_Race
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel2.Location = new System.Drawing.Point(389, 162);
+            this.panel2.Location = new System.Drawing.Point(390, 162);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(485, 343);
+            this.panel2.Size = new System.Drawing.Size(487, 343);
             this.panel2.TabIndex = 31;
             // 
             // panel1
@@ -202,17 +207,17 @@ namespace CC_Mountain_Biking_Race
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel3.Location = new System.Drawing.Point(166, 100);
+            this.panel3.Location = new System.Drawing.Point(167, 100);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(202, 32);
+            this.panel3.Size = new System.Drawing.Size(202, 31);
             this.panel3.TabIndex = 33;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel4.Location = new System.Drawing.Point(658, 100);
+            this.panel4.Location = new System.Drawing.Point(658, 97);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(203, 32);
+            this.panel4.Size = new System.Drawing.Size(203, 33);
             this.panel4.TabIndex = 34;
             // 
             // Homepage

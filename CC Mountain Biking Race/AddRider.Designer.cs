@@ -84,13 +84,14 @@ namespace CC_Mountain_Biking_Race
             this.lblName.ForeColor = System.Drawing.Color.SeaShell;
             this.lblName.Location = new System.Drawing.Point(97, 132);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(78, 26);
+            this.lblName.Size = new System.Drawing.Size(78, 28);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Name:";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txbName
             // 
+            this.txbName.BackColor = System.Drawing.Color.SeaShell;
             this.txbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbName.ForeColor = System.Drawing.Color.SaddleBrown;
             this.txbName.Location = new System.Drawing.Point(264, 127);
@@ -105,13 +106,14 @@ namespace CC_Mountain_Biking_Race
             this.lblSurname.ForeColor = System.Drawing.Color.SeaShell;
             this.lblSurname.Location = new System.Drawing.Point(97, 182);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(108, 30);
+            this.lblSurname.Size = new System.Drawing.Size(108, 28);
             this.lblSurname.TabIndex = 6;
             this.lblSurname.Text = "Surname:";
             this.lblSurname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txbSurname
             // 
+            this.txbSurname.BackColor = System.Drawing.Color.SeaShell;
             this.txbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSurname.ForeColor = System.Drawing.Color.SaddleBrown;
             this.txbSurname.Location = new System.Drawing.Point(264, 182);
@@ -126,7 +128,7 @@ namespace CC_Mountain_Biking_Race
             this.lblAge.ForeColor = System.Drawing.Color.SeaShell;
             this.lblAge.Location = new System.Drawing.Point(97, 238);
             this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(78, 29);
+            this.lblAge.Size = new System.Drawing.Size(78, 28);
             this.lblAge.TabIndex = 8;
             this.lblAge.Text = "Age:";
             this.lblAge.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,13 +140,14 @@ namespace CC_Mountain_Biking_Race
             this.lblSchool.ForeColor = System.Drawing.Color.SeaShell;
             this.lblSchool.Location = new System.Drawing.Point(97, 292);
             this.lblSchool.Name = "lblSchool";
-            this.lblSchool.Size = new System.Drawing.Size(108, 26);
+            this.lblSchool.Size = new System.Drawing.Size(108, 28);
             this.lblSchool.TabIndex = 10;
             this.lblSchool.Text = "School:";
             this.lblSchool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txbSchool
             // 
+            this.txbSchool.BackColor = System.Drawing.Color.SeaShell;
             this.txbSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSchool.ForeColor = System.Drawing.Color.SaddleBrown;
             this.txbSchool.Location = new System.Drawing.Point(264, 287);
@@ -159,7 +162,7 @@ namespace CC_Mountain_Biking_Race
             this.lblLegs.ForeColor = System.Drawing.Color.SeaShell;
             this.lblLegs.Location = new System.Drawing.Point(97, 349);
             this.lblLegs.Name = "lblLegs";
-            this.lblLegs.Size = new System.Drawing.Size(150, 27);
+            this.lblLegs.Size = new System.Drawing.Size(150, 28);
             this.lblLegs.TabIndex = 12;
             this.lblLegs.Text = "Select Leg(s):";
             this.lblLegs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,6 +182,7 @@ namespace CC_Mountain_Biking_Race
             // 
             // nudAge
             // 
+            this.nudAge.BackColor = System.Drawing.Color.SeaShell;
             this.nudAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudAge.ForeColor = System.Drawing.Color.SaddleBrown;
             this.nudAge.Location = new System.Drawing.Point(264, 236);
@@ -203,6 +207,7 @@ namespace CC_Mountain_Biking_Race
             // 
             // chlbx
             // 
+            this.chlbx.BackColor = System.Drawing.Color.SeaShell;
             this.chlbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chlbx.ForeColor = System.Drawing.Color.SaddleBrown;
             this.chlbx.FormattingEnabled = true;
@@ -265,7 +270,7 @@ namespace CC_Mountain_Biking_Race
             this.panel5.BackColor = System.Drawing.Color.NavajoWhite;
             this.panel5.Location = new System.Drawing.Point(260, 330);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(79, 80);
+            this.panel5.Size = new System.Drawing.Size(83, 80);
             this.panel5.TabIndex = 19;
             // 
             // AddRider

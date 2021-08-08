@@ -52,7 +52,11 @@ namespace CC_Mountain_Biking_Race
                     for (int i = 0; i < legData.Length; i++)
                     {
                         int leg = Convert.ToInt32(legData[i]);
-                        legsEntered.Add(leg);
+                        if (leg != -1)
+                        {
+                            legsEntered.Add(leg);
+                        }
+                        
                     }
                     string legcheck = "";
                     foreach (var item in legsEntered)
@@ -238,6 +242,17 @@ namespace CC_Mountain_Biking_Race
 
 
             return raceEntries;
+        }
+
+        public string UppercaseFirst(string s)
+        {
+            // Check for empty string.
+            if (string.IsNullOrEmpty(s))
+            {
+                return string.Empty;
+            }
+            // Return char and concat substring.
+            return char.ToUpper(s[0]) + s.Substring(1);
         }
 
     }

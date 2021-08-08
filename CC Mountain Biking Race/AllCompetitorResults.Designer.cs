@@ -53,7 +53,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.bttnDismiss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnDismiss.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.bttnDismiss.Location = new System.Drawing.Point(340, 401);
+            this.bttnDismiss.Location = new System.Drawing.Point(339, 467);
             this.bttnDismiss.Name = "bttnDismiss";
             this.bttnDismiss.Size = new System.Drawing.Size(188, 37);
             this.bttnDismiss.TabIndex = 16;
@@ -63,20 +63,21 @@ namespace CC_Mountain_Biking_Race
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.BackColor = System.Drawing.Color.SeaShell;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.richTextBox1.Location = new System.Drawing.Point(50, 56);
+            this.richTextBox1.Location = new System.Drawing.Point(50, 60);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(522, 324);
+            this.richTextBox1.Size = new System.Drawing.Size(522, 382);
             this.richTextBox1.TabIndex = 18;
             this.richTextBox1.Text = "";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel3.Location = new System.Drawing.Point(46, 50);
+            this.panel3.Location = new System.Drawing.Point(46, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(534, 338);
+            this.panel3.Size = new System.Drawing.Size(534, 396);
             this.panel3.TabIndex = 34;
             // 
             // btnExport
@@ -84,7 +85,7 @@ namespace CC_Mountain_Biking_Race
             this.btnExport.BackColor = System.Drawing.Color.SandyBrown;
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnExport.Location = new System.Drawing.Point(100, 401);
+            this.btnExport.Location = new System.Drawing.Point(99, 467);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(188, 37);
             this.btnExport.TabIndex = 35;
@@ -99,7 +100,7 @@ namespace CC_Mountain_Biking_Race
             this.BackColor = System.Drawing.Color.SeaShell;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(621, 450);
+            this.ClientSize = new System.Drawing.Size(621, 524);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.bttnDismiss);

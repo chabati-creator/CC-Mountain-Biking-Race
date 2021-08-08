@@ -79,8 +79,8 @@ namespace CC_Mountain_Biking_Race
             this.lblHeading2.Name = "lblHeading2";
             this.lblHeading2.Size = new System.Drawing.Size(676, 41);
             this.lblHeading2.TabIndex = 4;
-            this.lblHeading2.Text = "Please select a rider by clicking their ID and select a leg. Enter the rider\'s ra" +
-    "ce results such as their start and end times using the dropdowns.\r\n";
+            this.lblHeading2.Text = "Please select a rider and the leg they are entering in. Enter the rider\'s race re" +
+    "sults such as their start and end times using the dropdowns.\r\n";
             this.lblHeading2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblName
@@ -102,7 +102,7 @@ namespace CC_Mountain_Biking_Race
             this.lblLegs.ForeColor = System.Drawing.Color.SeaShell;
             this.lblLegs.Location = new System.Drawing.Point(101, 329);
             this.lblLegs.Name = "lblLegs";
-            this.lblLegs.Size = new System.Drawing.Size(109, 27);
+            this.lblLegs.Size = new System.Drawing.Size(109, 28);
             this.lblLegs.TabIndex = 14;
             this.lblLegs.Text = "Choose Leg:";
             this.lblLegs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,7 +114,7 @@ namespace CC_Mountain_Biking_Race
             this.lblEnd.ForeColor = System.Drawing.Color.SeaShell;
             this.lblEnd.Location = new System.Drawing.Point(101, 429);
             this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(109, 27);
+            this.lblEnd.Size = new System.Drawing.Size(109, 28);
             this.lblEnd.TabIndex = 17;
             this.lblEnd.Text = "End Time:";
             this.lblEnd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -126,7 +126,7 @@ namespace CC_Mountain_Biking_Race
             this.lblStart.ForeColor = System.Drawing.Color.SeaShell;
             this.lblStart.Location = new System.Drawing.Point(101, 380);
             this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(109, 27);
+            this.lblStart.Size = new System.Drawing.Size(109, 28);
             this.lblStart.TabIndex = 18;
             this.lblStart.Text = "Start Time:";
             this.lblStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -137,7 +137,7 @@ namespace CC_Mountain_Biking_Race
             this.bttnDismiss.ForeColor = System.Drawing.Color.SaddleBrown;
             this.bttnDismiss.Location = new System.Drawing.Point(441, 486);
             this.bttnDismiss.Name = "bttnDismiss";
-            this.bttnDismiss.Size = new System.Drawing.Size(217, 32);
+            this.bttnDismiss.Size = new System.Drawing.Size(200, 32);
             this.bttnDismiss.TabIndex = 22;
             this.bttnDismiss.Text = "Dismiss";
             this.bttnDismiss.UseVisualStyleBackColor = true;
@@ -145,8 +145,10 @@ namespace CC_Mountain_Biking_Race
             // 
             // listvSearch
             // 
+            this.listvSearch.BackColor = System.Drawing.Color.SeaShell;
             this.listvSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listvSearch.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.listvSearch.FullRowSelect = true;
             this.listvSearch.HideSelection = false;
             this.listvSearch.Location = new System.Drawing.Point(105, 164);
             this.listvSearch.Name = "listvSearch";
@@ -157,8 +159,9 @@ namespace CC_Mountain_Biking_Race
             // 
             // txbSearch
             // 
+            this.txbSearch.BackColor = System.Drawing.Color.SeaShell;
             this.txbSearch.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txbSearch.Location = new System.Drawing.Point(236, 124);
+            this.txbSearch.Location = new System.Drawing.Point(236, 123);
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(200, 22);
             this.txbSearch.TabIndex = 24;
@@ -234,7 +237,7 @@ namespace CC_Mountain_Biking_Race
             this.dtpStartTime.CalendarForeColor = System.Drawing.Color.SaddleBrown;
             this.dtpStartTime.CustomFormat = "HH:mm:ss";
             this.dtpStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartTime.Location = new System.Drawing.Point(236, 383);
+            this.dtpStartTime.Location = new System.Drawing.Point(236, 384);
             this.dtpStartTime.Name = "dtpStartTime";
             this.dtpStartTime.ShowUpDown = true;
             this.dtpStartTime.Size = new System.Drawing.Size(200, 22);
@@ -245,9 +248,11 @@ namespace CC_Mountain_Biking_Race
             // dtpEndTime
             // 
             this.dtpEndTime.CalendarForeColor = System.Drawing.Color.SaddleBrown;
+            this.dtpEndTime.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dtpEndTime.CalendarTitleForeColor = System.Drawing.Color.SaddleBrown;
             this.dtpEndTime.CustomFormat = "HH:mm:ss";
             this.dtpEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndTime.Location = new System.Drawing.Point(5, 3);
+            this.dtpEndTime.Location = new System.Drawing.Point(5, 4);
             this.dtpEndTime.Name = "dtpEndTime";
             this.dtpEndTime.ShowUpDown = true;
             this.dtpEndTime.Size = new System.Drawing.Size(200, 22);
@@ -258,7 +263,7 @@ namespace CC_Mountain_Biking_Race
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel1.Location = new System.Drawing.Point(232, 120);
+            this.panel1.Location = new System.Drawing.Point(232, 119);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(210, 28);
             this.panel1.TabIndex = 26;
@@ -276,7 +281,7 @@ namespace CC_Mountain_Biking_Race
             this.panel3.BackColor = System.Drawing.Color.NavajoWhite;
             this.panel3.Location = new System.Drawing.Point(232, 380);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(210, 27);
+            this.panel3.Size = new System.Drawing.Size(210, 28);
             this.panel3.TabIndex = 28;
             // 
             // panel4
@@ -285,7 +290,7 @@ namespace CC_Mountain_Biking_Race
             this.panel4.Controls.Add(this.dtpEndTime);
             this.panel4.Location = new System.Drawing.Point(232, 429);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(210, 27);
+            this.panel4.Size = new System.Drawing.Size(210, 28);
             this.panel4.TabIndex = 29;
             // 
             // bttnUpdate
@@ -295,7 +300,7 @@ namespace CC_Mountain_Biking_Race
             this.bttnUpdate.ForeColor = System.Drawing.Color.SeaShell;
             this.bttnUpdate.Location = new System.Drawing.Point(214, 486);
             this.bttnUpdate.Name = "bttnUpdate";
-            this.bttnUpdate.Size = new System.Drawing.Size(193, 32);
+            this.bttnUpdate.Size = new System.Drawing.Size(200, 32);
             this.bttnUpdate.TabIndex = 21;
             this.bttnUpdate.Text = "Update";
             this.bttnUpdate.UseVisualStyleBackColor = false;

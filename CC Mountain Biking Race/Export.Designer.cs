@@ -33,6 +33,7 @@ namespace CC_Mountain_Biking_Race
             this.lbl1 = new System.Windows.Forms.Label();
             this.bttnDismiss = new System.Windows.Forms.Button();
             this.lblHeading2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lbl1
@@ -62,9 +63,9 @@ namespace CC_Mountain_Biking_Race
             // 
             // lblHeading2
             // 
-            this.lblHeading2.BackColor = System.Drawing.Color.Chocolate;
+            this.lblHeading2.BackColor = System.Drawing.Color.SeaShell;
             this.lblHeading2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeading2.ForeColor = System.Drawing.Color.SeaShell;
+            this.lblHeading2.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblHeading2.Location = new System.Drawing.Point(64, 101);
             this.lblHeading2.Name = "lblHeading2";
             this.lblHeading2.Size = new System.Drawing.Size(297, 86);
@@ -72,6 +73,14 @@ namespace CC_Mountain_Biking_Race
             this.lblHeading2.Text = "All Competitor Results has been successfully exported to the AllCompetitorResults" +
     ".txt";
             this.lblHeading2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel3.Location = new System.Drawing.Point(57, 96);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(312, 95);
+            this.panel3.TabIndex = 39;
             // 
             // Export
             // 
@@ -84,6 +93,7 @@ namespace CC_Mountain_Biking_Race
             this.Controls.Add(this.lblHeading2);
             this.Controls.Add(this.bttnDismiss);
             this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.panel3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -99,5 +109,6 @@ namespace CC_Mountain_Biking_Race
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Button bttnDismiss;
         private System.Windows.Forms.Label lblHeading2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

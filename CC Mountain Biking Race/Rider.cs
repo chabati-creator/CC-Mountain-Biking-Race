@@ -126,6 +126,10 @@ namespace CC_Mountain_Biking_Race
                 {
                     LegStatus += legCounter + "#";
                 }
+                else
+                {
+                    LegStatus += "-1#";
+                }
                 legCounter ++;
             }
             LegStatus = LegStatus.Remove(LegStatus.Length - 1, 1);
