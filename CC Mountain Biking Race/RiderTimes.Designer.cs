@@ -79,8 +79,8 @@ namespace CC_Mountain_Biking_Race
             this.lblHeading2.Name = "lblHeading2";
             this.lblHeading2.Size = new System.Drawing.Size(676, 41);
             this.lblHeading2.TabIndex = 4;
-            this.lblHeading2.Text = "Please select a rider and the leg they are entering in. Enter the rider\'s race re" +
-    "sults such as their start and end times using the dropdowns.\r\n";
+            this.lblHeading2.Text = "Select a rider and the leg they are entering in. Enter the rider\'s race results s" +
+    "uch as their start and end times using the dropdowns.\r\n";
             this.lblHeading2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblName

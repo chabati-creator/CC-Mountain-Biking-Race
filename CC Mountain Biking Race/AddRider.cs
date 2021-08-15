@@ -39,11 +39,12 @@ namespace CC_Mountain_Biking_Race
             string surname = txbSurname.Text;
             string school = txbSchool.Text;
 
-            if (txbName.Text == "" && !Regex.IsMatch(txbName.Text, "[A-Z][a-z]")) //If the Name textbox is blank then do the following
+            if (txbName.Text == "" || !Regex.IsMatch(txbName.Text, @"^[a-zA-Z]+$")) //If the Name textbox is blank then do the following
             {
+                
                 txbName.BackColor = Color.LightPink; //The background colour would change to light pink
                 string caption = "Error";
-                string message = "The Name textbox cannot be empty. Please enter the rider's name";
+                string message = "The Name textbox cannot be empty and contain integers. Please enter the rider's name";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
 
@@ -52,12 +53,15 @@ namespace CC_Mountain_Biking_Race
                 txbName.Focus();
             }
             else
+            {
                 txbName.BackColor = Color.White; //Will change the backgroud colour back to white when input is valid (textbox not blank)
-            if (txbSurname.Text == "")
+            }
+                
+            if (txbSurname.Text == "" || !Regex.IsMatch(txbSurname.Text, @"^[a-zA-Z]+$"))
             {
                 txbSurname.BackColor = Color.LightPink;
                 string caption = "Error";
-                string message = "The Surname textbox cannot be empty. Please enter the rider's surname";
+                string message = "The Surname textbox cannot be empty and contain integers. Please enter the rider's surname";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
 
@@ -66,11 +70,11 @@ namespace CC_Mountain_Biking_Race
             }
             else
                 txbSurname.BackColor = Color.White;
-            if (txbSchool.Text == "")
+            if (txbSchool.Text == "" || !Regex.IsMatch(txbSchool.Text, @"^[a-zA-Z]+$"))
             {
                 txbSchool.BackColor = Color.LightPink;
                 string caption = "Error";
-                string message = "The School textbox cannot be empty. Please enter the rider's school";
+                string message = "The School textbox cannot be empty and contain integers. Please enter the rider's school";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
 
@@ -82,6 +86,7 @@ namespace CC_Mountain_Biking_Race
 
             if (chlbx.CheckedItems.Count == 0) //If the user has not selected a leg(s) then do the following
             {
+                chlbx.BackColor = Color.LightPink;
                 string caption = "Error";
                 string message = "Please select which leg(s) the rider is entering in.";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
@@ -89,9 +94,14 @@ namespace CC_Mountain_Biking_Race
                 //Display a message box showing an error message informing the user that they have not selected a leg(s)
                 result = MessageBox.Show(message, caption, buttons);
             }
+            else
+                chlbx.BackColor = Color.White;
 
 
-            if (txbName.Text != "" && txbSurname.Text != "" && txbSchool.Text != "" &&
+            if (txbName.Text != "" && Regex.IsMatch(txbName.Text, @"^[a-zA-Z]+$") 
+                && txbSurname.Text != "" && Regex.IsMatch(txbSurname.Text, @"^[a-zA-Z]+$") 
+                && txbSchool.Text != "" && Regex.IsMatch(txbSchool.Text, @"^[a-zA-Z]+$") 
+                &&
                 chlbx.CheckedItems.Count !=0)      // if all the textboxes are not blank and
                                                    // the user has selected a leg(race) the program continues
             {

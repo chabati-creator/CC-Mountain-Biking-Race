@@ -197,5 +197,13 @@ namespace CC_Mountain_Biking_Race
             PopulateListViewScoreboard(dvs);
         }
 
+        private void bttnHelp_Click(object sender, EventArgs e)
+        {
+            //Homepage form closes and Help form appears when Help button clicked
+            this.Hide();
+            Help window = new Help(rm);
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
+        }
     }
 }

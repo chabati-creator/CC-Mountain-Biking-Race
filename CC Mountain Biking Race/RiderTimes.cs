@@ -77,7 +77,7 @@ namespace CC_Mountain_Biking_Race
             //Getting DataList from Rider Manager
             List<Rider> riders = this.rm.GetRiders();
              
-            foreach (var rider in riders)
+            foreach (var rider in riders)   //Code from Microsoft Teams
             {
                 string[] entryData = rider.GetLegStatus().Split('#');
 
@@ -145,7 +145,7 @@ namespace CC_Mountain_Biking_Race
         //Perform the filter of riders
         private void FilterTxt_TextChanged(object sender, EventArgs e)
         {
-            dv.RowFilter = string.Format("Name Like '%{0}%'", txbSearch .Text);
+            dv.RowFilter = string.Format("Name Like '%{0}%'", txbSearch .Text); // Code from https://www.youtube.com/watch?v=cycavkXug5U
             PopulateListView(dv);
         }
 
