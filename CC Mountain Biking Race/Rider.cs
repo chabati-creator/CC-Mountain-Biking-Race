@@ -9,12 +9,11 @@ namespace CC_Mountain_Biking_Race
 {
     public class Rider
     {
-        public int riderID;
-        public string name;
-        public string surname;
-        public int age;
-        public string school;
-        public int startTime;
+        private int riderID;
+        private string name;
+        private string surname;
+        private int age;
+        private string school;
         public int endTime;
         public int totalTime;
         public int legIndex;

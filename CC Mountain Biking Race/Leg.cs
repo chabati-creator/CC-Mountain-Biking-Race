@@ -10,9 +10,9 @@ namespace CC_Mountain_Biking_Race
     class Leg
     {
         private bool entered;
-        public string startTime = "00:00:00";
-        public string endTime = "00:00:00";
-        public int totalTime;
+        private string startTime = "00:00:00";
+        private string endTime = "00:00:00";
+        private int totalTime;
 
         public Leg(string startTime)
         {

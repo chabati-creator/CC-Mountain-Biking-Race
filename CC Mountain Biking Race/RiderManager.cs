@@ -15,7 +15,6 @@ namespace CC_Mountain_Biking_Race
 
         List<Rider> riders = new List<Rider>();
 
-        int legIndex;
         public RiderManager()
         {
         }
@@ -30,7 +29,7 @@ namespace CC_Mountain_Biking_Race
             return riders[riders.Count - 1].RiderSummary();
         }
 
-        
+
 
         public void LoadRiders()
         {

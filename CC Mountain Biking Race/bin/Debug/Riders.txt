@@ -1,6 +1,2 @@
-1,James,Wait,12,HBHS,0#1#-1#3
-2,John,Wait,17,HBHS,0#1#2#3
-3,Naya,Mugot,17,CHBC,0#1#-1#3
-4,Charles,Batistis,12,Chbc,0#1#-1#3
-5,Kate,Apolonio,14,Chbc,0#1#2#-1
-6,Ileana,Ocampo,17,CHBC,0#1#-1#3
+1,C,B,18,HB,0#1#2#3
+2,Test,Test,14,Test,0#-1#2#-1

@@ -35,21 +35,21 @@ namespace CC_Mountain_Biking_Race
         {
 
             string name = txbName.Text;
-
             string surname = txbSurname.Text;
+            int age = Convert.ToInt32(nudAge.Value);
             string school = txbSchool.Text;
 
             if (txbName.Text == "" || !Regex.IsMatch(txbName.Text, @"^[a-zA-Z]+$")) //If the Name textbox is blank then do the following
             {
                 
                 txbName.BackColor = Color.LightPink; //The background colour would change to light pink
-                string caption = "Error";
-                string message = "The Name textbox cannot be empty and contain integers. Please enter the rider's name";
+                string Caption = "Error";
+                string Message = "The Name textbox cannot be empty and contain integers. Please enter the rider's name";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
 
                 //Displays the MessageBox showing an error message informing the user that the name textbox is blank 
-                result = MessageBox.Show(message, caption, buttons);
+                result = MessageBox.Show(Message, Caption, buttons);
                 txbName.Focus();
             }
             else
@@ -60,12 +60,12 @@ namespace CC_Mountain_Biking_Race
             if (txbSurname.Text == "" || !Regex.IsMatch(txbSurname.Text, @"^[a-zA-Z]+$"))
             {
                 txbSurname.BackColor = Color.LightPink;
-                string caption = "Error";
-                string message = "The Surname textbox cannot be empty and contain integers. Please enter the rider's surname";
+                string Caption = "Error";
+                string Message = "The Surname textbox cannot be empty and contain integers. Please enter the rider's surname";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
 
-                result = MessageBox.Show(message, caption, buttons);
+                result = MessageBox.Show(Message, Caption, buttons);
                 txbSurname.Focus();
             }
             else
@@ -73,12 +73,12 @@ namespace CC_Mountain_Biking_Race
             if (txbSchool.Text == "" || !Regex.IsMatch(txbSchool.Text, @"^[a-zA-Z]+$"))
             {
                 txbSchool.BackColor = Color.LightPink;
-                string caption = "Error";
-                string message = "The School textbox cannot be empty and contain integers. Please enter the rider's school";
+                string Caption = "Error";
+                string Message = "The School textbox cannot be empty and contain integers. Please enter the rider's school";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
 
-                result = MessageBox.Show(message, caption, buttons);
+                result = MessageBox.Show(Message, Caption, buttons);
                 txbSchool.Focus();
             }
             else
@@ -87,12 +87,12 @@ namespace CC_Mountain_Biking_Race
             if (chlbx.CheckedItems.Count == 0) //If the user has not selected a leg(s) then do the following
             {
                 chlbx.BackColor = Color.LightPink;
-                string caption = "Error";
-                string message = "Please select which leg(s) the rider is entering in.";
+                string Caption = "Error";
+                string Message = "Please select which leg(s) the rider is entering in.";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 //Display a message box showing an error message informing the user that they have not selected a leg(s)
-                result = MessageBox.Show(message, caption, buttons);
+                result = MessageBox.Show(Message, Caption, buttons);
             }
             else
                 chlbx.BackColor = Color.White;
@@ -105,8 +105,7 @@ namespace CC_Mountain_Biking_Race
                 chlbx.CheckedItems.Count !=0)      // if all the textboxes are not blank and
                                                    // the user has selected a leg(race) the program continues
             {
-
-                int age = Convert.ToInt32(nudAge.Value);
+                
 
                 List<int> enteredLegIndices = new List<int>();
 
@@ -115,7 +114,7 @@ namespace CC_Mountain_Biking_Race
                     enteredLegIndices.Add(legIndex);
                 }
                 //name[0]. = Char.ToUpper(name[0]);
-                rm.AddRider(rm.UppercaseFirst(name), rm.UppercaseFirst(surname), age, school, enteredLegIndices);
+                rm.AddRider(rm.UppercaseFirst(name), rm.UppercaseFirst(surname), age, rm.UppercaseFirst(school), enteredLegIndices);
 
                 //Shows the user True/False depending if the check box is checked or not
                 //MessageBox.Show(r.legStatusChecked());
