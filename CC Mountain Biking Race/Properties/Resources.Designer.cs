@@ -59,15 +59,5 @@ namespace CC_Mountain_Biking_Race.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cancel_edited {
-            get {
-                object obj = ResourceManager.GetObject("Cancel edited", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

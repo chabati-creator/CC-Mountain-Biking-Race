@@ -41,7 +41,6 @@ namespace CC_Mountain_Biking_Race
 
             if (txbName.Text == "" || !Regex.IsMatch(txbName.Text, @"^[a-zA-Z]+$")) //If the Name textbox is blank then do the following
             {
-                
                 txbName.BackColor = Color.LightPink; //The background colour would change to light pink
                 string Caption = "Error";
                 string Message = "The Name textbox cannot be empty and contain integers. Please enter the rider's name";
@@ -105,17 +104,15 @@ namespace CC_Mountain_Biking_Race
                 chlbx.CheckedItems.Count !=0)      // if all the textboxes are not blank and
                                                    // the user has selected a leg(race) the program continues
             {
-                
-
                 List<int> enteredLegIndices = new List<int>();
 
                 foreach (int legIndex in chlbx.CheckedIndices)
                 {
                     enteredLegIndices.Add(legIndex);
                 }
-                //name[0]. = Char.ToUpper(name[0]);
                 rm.AddRider(rm.UppercaseFirst(name), rm.UppercaseFirst(surname), age, rm.UppercaseFirst(school), enteredLegIndices);
 
+                //name[0]. = Char.ToUpper(name[0]);
                 //Shows the user True/False depending if the check box is checked or not
                 //MessageBox.Show(r.legStatusChecked());
 

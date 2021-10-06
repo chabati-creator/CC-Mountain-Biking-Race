@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,12 +48,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -71,6 +74,17 @@
     </Compile>
     <Compile Include="AllCompetitorResults.Designer.cs">
       <DependentUpon>AllCompetitorResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CCMountainBikingDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CCMountainBikingDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CCMountainBikingRaceDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CCMountainBikingRaceDB.Designer.cs">
+      <DependentUpon>CCMountainBikingRaceDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Export.cs">
       <SubType>Form</SubType>
@@ -128,6 +142,9 @@
     <EmbeddedResource Include="AllCompetitorResults.resx">
       <DependentUpon>AllCompetitorResults.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CCMountainBikingRaceDB.resx">
+      <DependentUpon>CCMountainBikingRaceDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Export.resx">
       <DependentUpon>Export.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +179,17 @@
     <EmbeddedResource Include="TimesSummary.resx">
       <DependentUpon>TimesSummary.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CCMountainBikingDBDataSet.xsc">
+      <DependentUpon>CCMountainBikingDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CCMountainBikingDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CCMountainBikingDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CCMountainBikingDBDataSet.xss">
+      <DependentUpon>CCMountainBikingDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -183,15 +211,6 @@
     <None Include="Resources\Cancel edited.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CC Mountain Biking Race Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CC Mountain Biking Race Database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>CC Mountain Biking Race Database.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -202,6 +221,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CCMountainBikingDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CCMountainBikingDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CCMountainBikingDB.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
