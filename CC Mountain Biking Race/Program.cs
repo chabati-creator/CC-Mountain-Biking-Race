@@ -14,13 +14,14 @@ namespace CC_Mountain_Biking_Race
         [STAThread]
         static void Main()
         {
-            RiderManager rm = new RiderManager();
+            //RiderManager rm = new RiderManager();
             //Load riders from a txt file to act as permanent riders
-            rm.LoadRiders();
+            //rm.LoadRiders();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Homepage(rm));
+            //Application.Run(new Homepage(rm));
+            Application.Run(new CCMountainBikingRaceDB());
         }
     }
 }
