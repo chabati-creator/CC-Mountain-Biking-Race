@@ -79,7 +79,7 @@ namespace CC_Mountain_Biking_Race
 
                 command.Parameters.AddWithValue("@RiderName", txtRiderName.Text);
 
-                command.ExecuteNonQuery();
+                command.ExecuteScalar();
             }
 
             PopulateRiders();
@@ -95,10 +95,11 @@ namespace CC_Mountain_Biking_Race
 
                 command.Parameters.AddWithValue("@RiderName", txtRiderName.Text);
                 command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
-                command.ExecuteNonQuery();
+                command.ExecuteScalar();
             }
 
             PopulateRiders();
         }
+
     }
 }

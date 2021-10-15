@@ -79,6 +79,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CCMountainBikingDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="CCMountainBikingRaceDB.cs">
       <SubType>Form</SubType>
@@ -181,14 +182,17 @@
     </EmbeddedResource>
     <None Include="CCMountainBikingDBDataSet.xsc">
       <DependentUpon>CCMountainBikingDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="CCMountainBikingDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CCMountainBikingDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="CCMountainBikingDBDataSet.xss">
       <DependentUpon>CCMountainBikingDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -19,3 +19,7 @@ C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC M
 C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\bin\Debug\CCMountainBikingDB.mdf
 C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\bin\Debug\CCMountainBikingDB_log.ldf
 C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\obj\Debug\CC_Mountain_Biking_Race.CCMountainBikingRaceDB.resources
+C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\bin\Debug\CCMountainBikingDBDataSet.Designer.cs
+C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\bin\Debug\CCMountainBikingDBDataSet.xsc
+C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\bin\Debug\CCMountainBikingDBDataSet.xsd
+C:\Users\batis\source\repos\CC Mountain Biking Race\CC-Mountain-Biking-Race\CC Mountain Biking Race\bin\Debug\CCMountainBikingDBDataSet.xss
