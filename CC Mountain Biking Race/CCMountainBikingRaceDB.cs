@@ -101,5 +101,9 @@ namespace CC_Mountain_Biking_Race
             PopulateRiders();
         }
 
+        private void btnDeleteRider_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -124,6 +124,7 @@ namespace CC_Mountain_Biking_Race
             this.btnDeleteRider.TabIndex = 8;
             this.btnDeleteRider.Text = "Delete Rider";
             this.btnDeleteRider.UseVisualStyleBackColor = true;
+            this.btnDeleteRider.Click += new System.EventHandler(this.btnDeleteRider_Click);
             // 
             // cCMountainBikingDBDataSet
             // 
