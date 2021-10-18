@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+//using MySql.Data.MySqlClient;
 
 namespace CC_Mountain_Biking_Race
 {
@@ -37,12 +38,13 @@ namespace CC_Mountain_Biking_Race
                 DataTable riderDetailsTable = new DataTable();
                 adapter.Fill(riderDetailsTable);
 
-                lstRiderDetails.DisplayMember = "Name";
+                lstRiderDetails.DisplayMember = "FirstName";
                 lstRiderDetails.ValueMember = "Id";
                 lstRiderDetails.DataSource = riderDetailsTable;
             }
+            connection.Close();
         }
-        private void PopulateRiderTimes()
+        private void PopulateEndTimes()
         {
             string query = "SELECT a.EndTime FROM RiderTimes a " +
                            "INNER JOIN DetailsTimes b ON a.Id = b.TimesId " +
@@ -57,29 +59,54 @@ namespace CC_Mountain_Biking_Race
                 DataTable riderTimesTable = new DataTable();
                 adapter.Fill(riderTimesTable);
 
-                lstRiderTimes.DisplayMember = "EndTime";
-                lstRiderTimes.ValueMember = "Id";
-                lstRiderTimes.DataSource = riderTimesTable;
+                lstEndTimes.DisplayMember = "EndTime";
+                lstEndTimes.ValueMember = "Id";
+                lstEndTimes.DataSource = riderTimesTable;
+            }
+        }
+        private void PopulateStartTimes()
+        {
+            string query = "SELECT a.StartTime FROM RiderTimes a " +
+                           "INNER JOIN DetailsTimes b ON a.Id = b.TimesId " +
+                            "WHERE b.RiderId = @RiderId";
+
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            {
+                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+
+                DataTable riderTimesTable = new DataTable();
+                adapter.Fill(riderTimesTable);
+
+                lstStartTimes.DisplayMember = "StartTime";
+                lstStartTimes.ValueMember = "Id";
+                lstStartTimes.DataSource = riderTimesTable;
             }
         }
 
         private void lstRiderDetails_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PopulateRiderTimes();
+            PopulateEndTimes();
+            PopulateStartTimes();
         }
-
+        //When checking if a rider has been added (data inserted), rider updated or deleted then check using Bin/Debug SQLQuery as the Program.exe runs in Debug folder
+        //Work on this one using the YT tutorial
         private void btnAddRider_Click(object sender, EventArgs e)
         {
             string query = "INSERT INTO RiderDetails VALUES (@RiderName, 'BB', 15, 'HBC',0,1,-1,3)";
+            //string query = "INSERT INTO RiderDetails (FirstName,Surname,Age,School,[Leg 1],[Leg 2],[Leg 3],[Leg 4]) VALUES ('" + this.txbName.Text+"','"+this.txbSurname.Text+"',15,'"+this.txbSchool.Text+"',0,1,2,3)";
+            
 
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 connection.Open();
 
-                command.Parameters.AddWithValue("@RiderName", txtRiderName.Text);
-
-                command.ExecuteScalar();
+                command.Parameters.AddWithValue("@RiderName", txbName.Text);
+                MessageBox.Show(query);
+                command.ExecuteNonQuery();
+                connection.Close();
             }
 
             PopulateRiders();
@@ -93,7 +120,7 @@ namespace CC_Mountain_Biking_Race
             {
                 connection.Open();
 
-                command.Parameters.AddWithValue("@RiderName", txtRiderName.Text);
+                command.Parameters.AddWithValue("@RiderName", txbName.Text);
                 command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
                 command.ExecuteScalar();
             }
@@ -103,7 +130,36 @@ namespace CC_Mountain_Biking_Race
 
         private void btnDeleteRider_Click(object sender, EventArgs e)
         {
+            string query = "DELETE FROM RiderDetails WHERE Id = @RiderId";
 
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+
+                command.ExecuteScalar();
+            }
+
+            PopulateRiders();
+        }
+
+        private void btnAddEndTime_Click(object sender, EventArgs e)
+        {
+        //    string query = "INSERT INTO RiderTimes VALUES (39600, @RiderEndTime)";
+
+        //    using (connection = new SqlConnection(connectionString))
+        //    using (SqlCommand command = new SqlCommand(query, connection))
+        //    {
+        //        connection.Open();
+
+        //        command.Parameters.AddWithValue("@RiderEndTime", txtRiderName.Text);
+
+        //        command.ExecuteScalar();
+        //    }
+
+        //    PopulateRiders();
         }
     }
 }
