@@ -87,6 +87,12 @@
     <Compile Include="CCMountainBikingRaceDB.Designer.cs">
       <DependentUpon>CCMountainBikingRaceDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="CCMountainBikingRaceDBAddRiderTimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CCMountainBikingRaceDBAddRiderTimes.Designer.cs">
+      <DependentUpon>CCMountainBikingRaceDBAddRiderTimes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Export.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CCMountainBikingRaceDB.resx">
       <DependentUpon>CCMountainBikingRaceDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CCMountainBikingRaceDBAddRiderTimes.resx">
+      <DependentUpon>CCMountainBikingRaceDBAddRiderTimes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Export.resx">
       <DependentUpon>Export.cs</DependentUpon>

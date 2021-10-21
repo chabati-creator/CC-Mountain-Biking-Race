@@ -31,25 +31,24 @@ namespace CC_Mountain_Biking_Race
         {
             this.lblRiderDetails = new System.Windows.Forms.Label();
             this.lstRiderDetails = new System.Windows.Forms.ListBox();
-            this.lstEndTimes = new System.Windows.Forms.ListBox();
-            this.lblDetailsTimes = new System.Windows.Forms.Label();
             this.btnAddRiderName = new System.Windows.Forms.Button();
             this.btnUpdateRiderName = new System.Windows.Forms.Button();
             this.btnDeleteRider = new System.Windows.Forms.Button();
             this.cCMountainBikingDBDataSet = new CC_Mountain_Biking_Race.CCMountainBikingDBDataSet();
-            this.lstStartTimes = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddEndTime = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblRiderName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.nudAge = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.chlbx = new System.Windows.Forms.CheckedListBox();
             this.txbName = new System.Windows.Forms.TextBox();
             this.txbSurname = new System.Windows.Forms.TextBox();
             this.txbSchool = new System.Windows.Forms.TextBox();
+            this.chbLeg1 = new System.Windows.Forms.CheckBox();
+            this.chbLeg2 = new System.Windows.Forms.CheckBox();
+            this.chbLeg3 = new System.Windows.Forms.CheckBox();
+            this.chbLeg4 = new System.Windows.Forms.CheckBox();
+            this.btnAddRiderTimes = new System.Windows.Forms.Button();
+            this.lstvRiderDetails = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.cCMountainBikingDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).BeginInit();
             this.SuspendLayout();
@@ -67,29 +66,10 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lstRiderDetails.FormattingEnabled = true;
             this.lstRiderDetails.ItemHeight = 16;
-            this.lstRiderDetails.Location = new System.Drawing.Point(30, 298);
+            this.lstRiderDetails.Location = new System.Drawing.Point(30, 286);
             this.lstRiderDetails.Name = "lstRiderDetails";
-            this.lstRiderDetails.Size = new System.Drawing.Size(328, 116);
+            this.lstRiderDetails.Size = new System.Drawing.Size(468, 116);
             this.lstRiderDetails.TabIndex = 1;
-            this.lstRiderDetails.SelectedIndexChanged += new System.EventHandler(this.lstRiderDetails_SelectedIndexChanged);
-            // 
-            // lstEndTimes
-            // 
-            this.lstEndTimes.FormattingEnabled = true;
-            this.lstEndTimes.ItemHeight = 16;
-            this.lstEndTimes.Location = new System.Drawing.Point(285, 480);
-            this.lstEndTimes.Name = "lstEndTimes";
-            this.lstEndTimes.Size = new System.Drawing.Size(119, 20);
-            this.lstEndTimes.TabIndex = 3;
-            // 
-            // lblDetailsTimes
-            // 
-            this.lblDetailsTimes.AutoSize = true;
-            this.lblDetailsTimes.Location = new System.Drawing.Point(27, 483);
-            this.lblDetailsTimes.Name = "lblDetailsTimes";
-            this.lblDetailsTimes.Size = new System.Drawing.Size(72, 17);
-            this.lblDetailsTimes.TabIndex = 2;
-            this.lblDetailsTimes.Text = "End Time:";
             // 
             // btnAddRiderName
             // 
@@ -125,42 +105,6 @@ namespace CC_Mountain_Biking_Race
             // 
             this.cCMountainBikingDBDataSet.DataSetName = "CCMountainBikingDBDataSet";
             this.cCMountainBikingDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lstStartTimes
-            // 
-            this.lstStartTimes.FormattingEnabled = true;
-            this.lstStartTimes.ItemHeight = 16;
-            this.lstStartTimes.Location = new System.Drawing.Point(285, 439);
-            this.lstStartTimes.Name = "lstStartTimes";
-            this.lstStartTimes.Size = new System.Drawing.Size(119, 20);
-            this.lstStartTimes.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 439);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Start Time:";
-            // 
-            // btnAddEndTime
-            // 
-            this.btnAddEndTime.Location = new System.Drawing.Point(138, 471);
-            this.btnAddEndTime.Name = "btnAddEndTime";
-            this.btnAddEndTime.Size = new System.Drawing.Size(116, 31);
-            this.btnAddEndTime.TabIndex = 11;
-            this.btnAddEndTime.Text = "Add End Time";
-            this.btnAddEndTime.UseVisualStyleBackColor = true;
-            this.btnAddEndTime.Click += new System.EventHandler(this.btnAddEndTime_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(121, 480);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 28);
-            this.textBox1.TabIndex = 12;
             // 
             // lblRiderName
             // 
@@ -223,22 +167,6 @@ namespace CC_Mountain_Biking_Race
             this.label4.TabIndex = 18;
             this.label4.Text = "Age:";
             // 
-            // chlbx
-            // 
-            this.chlbx.BackColor = System.Drawing.Color.SeaShell;
-            this.chlbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chlbx.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.chlbx.FormattingEnabled = true;
-            this.chlbx.Items.AddRange(new object[] {
-            "Leg 1",
-            "Leg 2",
-            "Leg 3",
-            "Leg 4"});
-            this.chlbx.Location = new System.Drawing.Point(154, 191);
-            this.chlbx.Name = "chlbx";
-            this.chlbx.Size = new System.Drawing.Size(72, 89);
-            this.chlbx.TabIndex = 19;
-            // 
             // txbName
             // 
             this.txbName.BackColor = System.Drawing.Color.SeaShell;
@@ -269,29 +197,93 @@ namespace CC_Mountain_Biking_Race
             this.txbSchool.Size = new System.Drawing.Size(162, 28);
             this.txbSchool.TabIndex = 22;
             // 
+            // chbLeg1
+            // 
+            this.chbLeg1.AutoSize = true;
+            this.chbLeg1.Location = new System.Drawing.Point(154, 200);
+            this.chbLeg1.Name = "chbLeg1";
+            this.chbLeg1.Size = new System.Drawing.Size(66, 21);
+            this.chbLeg1.TabIndex = 23;
+            this.chbLeg1.Text = "Leg 1";
+            this.chbLeg1.UseVisualStyleBackColor = true;
+            // 
+            // chbLeg2
+            // 
+            this.chbLeg2.AutoSize = true;
+            this.chbLeg2.Location = new System.Drawing.Point(154, 218);
+            this.chbLeg2.Name = "chbLeg2";
+            this.chbLeg2.Size = new System.Drawing.Size(66, 21);
+            this.chbLeg2.TabIndex = 24;
+            this.chbLeg2.Text = "Leg 2";
+            this.chbLeg2.UseVisualStyleBackColor = true;
+            // 
+            // chbLeg3
+            // 
+            this.chbLeg3.AutoSize = true;
+            this.chbLeg3.Location = new System.Drawing.Point(154, 236);
+            this.chbLeg3.Name = "chbLeg3";
+            this.chbLeg3.Size = new System.Drawing.Size(66, 21);
+            this.chbLeg3.TabIndex = 25;
+            this.chbLeg3.Text = "Leg 3";
+            this.chbLeg3.UseVisualStyleBackColor = true;
+            // 
+            // chbLeg4
+            // 
+            this.chbLeg4.AutoSize = true;
+            this.chbLeg4.Location = new System.Drawing.Point(154, 254);
+            this.chbLeg4.Name = "chbLeg4";
+            this.chbLeg4.Size = new System.Drawing.Size(66, 21);
+            this.chbLeg4.TabIndex = 26;
+            this.chbLeg4.Text = "Leg 4";
+            this.chbLeg4.UseVisualStyleBackColor = true;
+            // 
+            // btnAddRiderTimes
+            // 
+            this.btnAddRiderTimes.Location = new System.Drawing.Point(532, 371);
+            this.btnAddRiderTimes.Name = "btnAddRiderTimes";
+            this.btnAddRiderTimes.Size = new System.Drawing.Size(158, 31);
+            this.btnAddRiderTimes.TabIndex = 27;
+            this.btnAddRiderTimes.Text = "Add Rider Times";
+            this.btnAddRiderTimes.UseVisualStyleBackColor = true;
+            this.btnAddRiderTimes.Click += new System.EventHandler(this.btnAddRiderTimes_Click);
+            // 
+            // lstvRiderDetails
+            // 
+            this.lstvRiderDetails.BackColor = System.Drawing.Color.SeaShell;
+            this.lstvRiderDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvRiderDetails.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lstvRiderDetails.FullRowSelect = true;
+            this.lstvRiderDetails.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lstvRiderDetails.HideSelection = false;
+            this.lstvRiderDetails.LabelWrap = false;
+            this.lstvRiderDetails.Location = new System.Drawing.Point(338, 136);
+            this.lstvRiderDetails.Name = "lstvRiderDetails";
+            this.lstvRiderDetails.Size = new System.Drawing.Size(469, 139);
+            this.lstvRiderDetails.TabIndex = 28;
+            this.lstvRiderDetails.UseCompatibleStateImageBehavior = false;
+            // 
             // CCMountainBikingRaceDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 531);
+            this.ClientSize = new System.Drawing.Size(856, 531);
+            this.Controls.Add(this.lstvRiderDetails);
+            this.Controls.Add(this.btnAddRiderTimes);
+            this.Controls.Add(this.chbLeg4);
+            this.Controls.Add(this.chbLeg3);
+            this.Controls.Add(this.chbLeg2);
+            this.Controls.Add(this.chbLeg1);
             this.Controls.Add(this.txbSchool);
             this.Controls.Add(this.txbSurname);
             this.Controls.Add(this.txbName);
-            this.Controls.Add(this.chlbx);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.nudAge);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnAddEndTime);
-            this.Controls.Add(this.lstStartTimes);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDeleteRider);
             this.Controls.Add(this.lblRiderName);
             this.Controls.Add(this.btnUpdateRiderName);
             this.Controls.Add(this.btnAddRiderName);
-            this.Controls.Add(this.lstEndTimes);
-            this.Controls.Add(this.lblDetailsTimes);
             this.Controls.Add(this.lstRiderDetails);
             this.Controls.Add(this.lblRiderDetails);
             this.Name = "CCMountainBikingRaceDB";
@@ -309,23 +301,22 @@ namespace CC_Mountain_Biking_Race
         private System.Windows.Forms.Label lblRiderDetails;
         private System.Windows.Forms.ListBox lstRiderDetails;
         private CCMountainBikingDBDataSet cCMountainBikingDBDataSet;
-        private System.Windows.Forms.Label lblDetailsTimes;
         private System.Windows.Forms.Button btnAddRiderName;
         private System.Windows.Forms.Button btnUpdateRiderName;
         private System.Windows.Forms.Button btnDeleteRider;
-        private System.Windows.Forms.ListBox lstEndTimes;
-        private System.Windows.Forms.ListBox lstStartTimes;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAddEndTime;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblRiderName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown nudAge;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckedListBox chlbx;
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.TextBox txbSurname;
         private System.Windows.Forms.TextBox txbSchool;
+        private System.Windows.Forms.CheckBox chbLeg1;
+        private System.Windows.Forms.CheckBox chbLeg2;
+        private System.Windows.Forms.CheckBox chbLeg3;
+        private System.Windows.Forms.CheckBox chbLeg4;
+        private System.Windows.Forms.Button btnAddRiderTimes;
+        private System.Windows.Forms.ListView lstvRiderDetails;
     }
 }
