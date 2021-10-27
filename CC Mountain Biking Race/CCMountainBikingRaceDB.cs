@@ -15,8 +15,7 @@ namespace CC_Mountain_Biking_Race
 {
     public partial class CCMountainBikingRaceDB : Form
     {
-        private DataTable dt;
-        private DataView dv;
+        private static int riderID = -1;
 
         SqlConnection connection;
         string connectionString;
@@ -28,83 +27,52 @@ namespace CC_Mountain_Biking_Race
             connectionString = ConfigurationManager.ConnectionStrings["CC_Mountain_Biking_Race.Properties.Settings.CCMountainBikingDBConnectionString"].ConnectionString;
 
             //Listview Properties
-            lstvRiderDetails.View = View.Details;
-            lstvRiderDetails.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            lvRiderDetails.View = View.Details;
+            lvRiderDetails.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
             //Add Columns
-            lstvRiderDetails.Columns.Add("ID");
-            lstvRiderDetails.Columns.Add("Name");
-            lstvRiderDetails.Columns.Add("Surname", 75);
-            lstvRiderDetails.Columns.Add("Age", 50);
-            lstvRiderDetails.Columns.Add("School", 75);
-            lstvRiderDetails.Columns.Add("Leg 1", 80);
-            lstvRiderDetails.Columns.Add("Leg 2", 80);
-            lstvRiderDetails.Columns.Add("Leg 3", 80);
-            lstvRiderDetails.Columns.Add("Leg 4", 80);
+            lvRiderDetails.Columns.Add("Name");
+            lvRiderDetails.Columns.Add("Surname", 75);
+            lvRiderDetails.Columns.Add("Age", 50);
+            lvRiderDetails.Columns.Add("School", 75);
+            lvRiderDetails.Columns.Add("Leg 1", 80);
+            lvRiderDetails.Columns.Add("Leg 2", 80);
+            lvRiderDetails.Columns.Add("Leg 3", 80);
+            lvRiderDetails.Columns.Add("Leg 4", 80);
 
-            //Initialise Datatable and add Columns
-            //dt = new DataTable();
-            //dt.Columns.Add("ID");
-            //dt.Columns.Add("Name");
-            //dt.Columns.Add("Surname");
-            //dt.Columns.Add("Age");
-            //dt.Columns.Add("School");
-            //dt.Columns.Add("Leg 1");
-            //dt.Columns.Add("Leg 2");
-            //dt.Columns.Add("Leg 3");
-            //dt.Columns.Add("Leg 4");
-
-            //Getting DataList from RiderDetails Database
-            //dt.Rows.Add(rider.GetRiderID(), rider.GetName(), rider.GetSurname(), rider.GetAge(), rider.GetSchool(), entryStatus[0], entryStatus[1], entryStatus[2], entryStatus[3]);
-
-
-            //Fill Datatable
-            //dv = new DataView(dt);
-
-            //PopulateListView(dv);
         }
-
-        //Fill Listview from dataviwew
-        //private void PopulateListView(DataView dv)
-        //{
-        //    lstRiderDetails.Items.Clear();
-        //    foreach (DataRow row in dv.ToTable().Rows)
-        //    {
-        //        lstRiderDetails.Items.Add(new ListViewItem(new String[] {row[0].ToString(), row[1].ToString(), row[2].ToString(),
-        //            row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString(), row[7].ToString(), row[8].ToString()}));
-        //    }
-
-        //}
-
+        
         private void CCMountainBikingRaceDB_Load(object sender, EventArgs e)
         {
             PopulateRiders();
         }
 
-        //private void PopulateRiders()
-        //{
-        //    using (connection = new SqlConnection(connectionString))
-        //    using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM RiderDetails", connection))
-        //    {
-        //        DataTable riderDetailsTable = new DataTable();
-        //        adapter.Fill(lstvRiderDetails);
-
-
-        //    }
-        //    connection.Close();
-        //}
-
         private void PopulateRiders()
         {
+            lvRiderDetails.Items.Clear();
             using (connection = new SqlConnection(connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM RiderDetails", connection))
             {
                 DataTable riderDetailsTable = new DataTable();
                 adapter.Fill(riderDetailsTable);
 
-                lstRiderDetails.DisplayMember = "FirstName";
-                lstRiderDetails.ValueMember = "Id";
-                lstRiderDetails.DataSource = riderDetailsTable;
+                //Loop through the DataTable.
+                foreach (DataRow row in riderDetailsTable.Rows)
+                {
+                    //Add Item to ListView.
+                    ListViewItem item = new ListViewItem(row[1].ToString());
+                    item.SubItems.Add(row[2].ToString());
+                    item.SubItems.Add(row[3].ToString());
+                    item.SubItems.Add(row[4].ToString());
+                    item.SubItems.Add(row[5].ToString());
+                    item.SubItems.Add(row[6].ToString());
+                    item.SubItems.Add(row[7].ToString());
+                    item.SubItems.Add(row[8].ToString());
+                    lvRiderDetails.Items.Add(item);
+                }
+
+                //lvRiderDetails.View = View.List;
+
             }
             connection.Close();
         }
@@ -133,7 +101,7 @@ namespace CC_Mountain_Biking_Race
                 command.Parameters.AddWithValue("@Leg4", chbLeg4.Checked);
 
                 //command.Parameters.AddWithValue("@RiderLeg 1", chlbx.);
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -150,7 +118,7 @@ namespace CC_Mountain_Biking_Race
                 connection.Open();
 
                 command.Parameters.AddWithValue("@RiderName", txbName.Text);
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -162,7 +130,7 @@ namespace CC_Mountain_Biking_Race
                 connection.Open();
 
                 command.Parameters.AddWithValue("@RiderSurname", txbSurname.Text);
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -174,7 +142,7 @@ namespace CC_Mountain_Biking_Race
                 connection.Open();
 
                 command.Parameters.AddWithValue("@RiderAge", nudAge.Value);
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -186,7 +154,7 @@ namespace CC_Mountain_Biking_Race
                 connection.Open();
 
                 command.Parameters.AddWithValue("@RiderSchool", txbSchool.Text);
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -198,7 +166,7 @@ namespace CC_Mountain_Biking_Race
                 connection.Open();
 
                 command.Parameters.AddWithValue("@Leg1", chbLeg1.Checked);
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -210,7 +178,7 @@ namespace CC_Mountain_Biking_Race
                 connection.Open();
 
                 command.Parameters.AddWithValue("@Leg2", chbLeg2.Checked);
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -222,7 +190,7 @@ namespace CC_Mountain_Biking_Race
                 connection.Open();
 
                 command.Parameters.AddWithValue("@Leg3", chbLeg3.Checked);
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -234,7 +202,7 @@ namespace CC_Mountain_Biking_Race
                 connection.Open();
 
                 command.Parameters.AddWithValue("@Leg4", chbLeg4.Checked);
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -256,7 +224,8 @@ namespace CC_Mountain_Biking_Race
             {
                 connection.Open();
 
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
+                //MessageBox.Show(""+riderID);
                 TimesId = (int)command.ExecuteScalar();
                 //MessageBox.Show("" + TimesId);
                 connection.Close();
@@ -270,7 +239,7 @@ namespace CC_Mountain_Biking_Race
             {
                 connection.Open();
 
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 //MessageBox.Show(query2);
                 command.ExecuteScalar();
                 connection.Close();
@@ -297,7 +266,7 @@ namespace CC_Mountain_Biking_Race
             {
                 connection.Open();
 
-                command.Parameters.AddWithValue("@RiderId", lstRiderDetails.SelectedValue);
+                command.Parameters.AddWithValue("@RiderId", riderID);
                 //MessageBox.Show(query4);
                 command.ExecuteScalar();
                 connection.Close();
@@ -309,7 +278,21 @@ namespace CC_Mountain_Biking_Race
         private void btnAddRiderTimes_Click(object sender, EventArgs e)
         {
             this.Hide();                                          //AddRider screen closes
-            CCMountainBikingRaceDBAddRiderTimes window = new CCMountainBikingRaceDBAddRiderTimes();  //AddRiderTimes screen opens passing the ...
+            CCMountainBikingRaceDBAddRiderTimes window = new CCMountainBikingRaceDBAddRiderTimes();  //AddRiderTimes screen opens
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
+        }
+
+        private void lvRiderDetails_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            riderID = (lvRiderDetails.FocusedItem.Index + 1);
+            //MessageBox.Show(""+riderID);   
+        }
+
+        private void btnFilterRiders_Click(object sender, EventArgs e)
+        {
+            this.Hide();                                          //AddRider screen closes
+            FilterRiders window = new FilterRiders();  //FilterSearch screen opens
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }

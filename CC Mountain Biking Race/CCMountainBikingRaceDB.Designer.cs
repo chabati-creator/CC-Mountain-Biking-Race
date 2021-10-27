@@ -30,7 +30,6 @@ namespace CC_Mountain_Biking_Race
         private void InitializeComponent()
         {
             this.lblRiderDetails = new System.Windows.Forms.Label();
-            this.lstRiderDetails = new System.Windows.Forms.ListBox();
             this.btnAddRiderName = new System.Windows.Forms.Button();
             this.btnUpdateRiderName = new System.Windows.Forms.Button();
             this.btnDeleteRider = new System.Windows.Forms.Button();
@@ -48,7 +47,10 @@ namespace CC_Mountain_Biking_Race
             this.chbLeg3 = new System.Windows.Forms.CheckBox();
             this.chbLeg4 = new System.Windows.Forms.CheckBox();
             this.btnAddRiderTimes = new System.Windows.Forms.Button();
-            this.lstvRiderDetails = new System.Windows.Forms.ListView();
+            this.lvRiderDetails = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblLegs = new System.Windows.Forms.Label();
+            this.btnFilterRiders = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cCMountainBikingDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).BeginInit();
             this.SuspendLayout();
@@ -56,24 +58,15 @@ namespace CC_Mountain_Biking_Race
             // lblRiderDetails
             // 
             this.lblRiderDetails.AutoSize = true;
-            this.lblRiderDetails.Location = new System.Drawing.Point(27, 9);
+            this.lblRiderDetails.Location = new System.Drawing.Point(25, 44);
             this.lblRiderDetails.Name = "lblRiderDetails";
             this.lblRiderDetails.Size = new System.Drawing.Size(89, 17);
             this.lblRiderDetails.TabIndex = 0;
             this.lblRiderDetails.Text = "Rider Details\r\n";
             // 
-            // lstRiderDetails
-            // 
-            this.lstRiderDetails.FormattingEnabled = true;
-            this.lstRiderDetails.ItemHeight = 16;
-            this.lstRiderDetails.Location = new System.Drawing.Point(30, 286);
-            this.lstRiderDetails.Name = "lstRiderDetails";
-            this.lstRiderDetails.Size = new System.Drawing.Size(468, 116);
-            this.lstRiderDetails.TabIndex = 1;
-            // 
             // btnAddRiderName
             // 
-            this.btnAddRiderName.Location = new System.Drawing.Point(364, 18);
+            this.btnAddRiderName.Location = new System.Drawing.Point(362, 53);
             this.btnAddRiderName.Name = "btnAddRiderName";
             this.btnAddRiderName.Size = new System.Drawing.Size(116, 31);
             this.btnAddRiderName.TabIndex = 4;
@@ -83,7 +76,7 @@ namespace CC_Mountain_Biking_Race
             // 
             // btnUpdateRiderName
             // 
-            this.btnUpdateRiderName.Location = new System.Drawing.Point(486, 18);
+            this.btnUpdateRiderName.Location = new System.Drawing.Point(484, 53);
             this.btnUpdateRiderName.Name = "btnUpdateRiderName";
             this.btnUpdateRiderName.Size = new System.Drawing.Size(169, 31);
             this.btnUpdateRiderName.TabIndex = 6;
@@ -93,7 +86,7 @@ namespace CC_Mountain_Biking_Race
             // 
             // btnDeleteRider
             // 
-            this.btnDeleteRider.Location = new System.Drawing.Point(364, 55);
+            this.btnDeleteRider.Location = new System.Drawing.Point(362, 90);
             this.btnDeleteRider.Name = "btnDeleteRider";
             this.btnDeleteRider.Size = new System.Drawing.Size(116, 31);
             this.btnDeleteRider.TabIndex = 8;
@@ -109,7 +102,7 @@ namespace CC_Mountain_Biking_Race
             // lblRiderName
             // 
             this.lblRiderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRiderName.Location = new System.Drawing.Point(26, 31);
+            this.lblRiderName.Location = new System.Drawing.Point(24, 66);
             this.lblRiderName.Name = "lblRiderName";
             this.lblRiderName.Size = new System.Drawing.Size(122, 22);
             this.lblRiderName.TabIndex = 7;
@@ -118,7 +111,7 @@ namespace CC_Mountain_Biking_Race
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 77);
+            this.label2.Location = new System.Drawing.Point(24, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 22);
             this.label2.TabIndex = 14;
@@ -127,7 +120,7 @@ namespace CC_Mountain_Biking_Race
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 159);
+            this.label3.Location = new System.Drawing.Point(24, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 22);
             this.label3.TabIndex = 16;
@@ -138,7 +131,7 @@ namespace CC_Mountain_Biking_Race
             this.nudAge.BackColor = System.Drawing.Color.SeaShell;
             this.nudAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudAge.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.nudAge.Location = new System.Drawing.Point(154, 116);
+            this.nudAge.Location = new System.Drawing.Point(152, 151);
             this.nudAge.Maximum = new decimal(new int[] {
             20,
             0,
@@ -161,7 +154,7 @@ namespace CC_Mountain_Biking_Race
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 118);
+            this.label4.Location = new System.Drawing.Point(24, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 22);
             this.label4.TabIndex = 18;
@@ -172,7 +165,7 @@ namespace CC_Mountain_Biking_Race
             this.txbName.BackColor = System.Drawing.Color.SeaShell;
             this.txbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbName.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txbName.Location = new System.Drawing.Point(154, 27);
+            this.txbName.Location = new System.Drawing.Point(152, 62);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(162, 28);
             this.txbName.TabIndex = 20;
@@ -182,7 +175,7 @@ namespace CC_Mountain_Biking_Race
             this.txbSurname.BackColor = System.Drawing.Color.SeaShell;
             this.txbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSurname.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txbSurname.Location = new System.Drawing.Point(154, 73);
+            this.txbSurname.Location = new System.Drawing.Point(152, 108);
             this.txbSurname.Name = "txbSurname";
             this.txbSurname.Size = new System.Drawing.Size(162, 28);
             this.txbSurname.TabIndex = 21;
@@ -192,7 +185,7 @@ namespace CC_Mountain_Biking_Race
             this.txbSchool.BackColor = System.Drawing.Color.SeaShell;
             this.txbSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSchool.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txbSchool.Location = new System.Drawing.Point(154, 155);
+            this.txbSchool.Location = new System.Drawing.Point(152, 190);
             this.txbSchool.Name = "txbSchool";
             this.txbSchool.Size = new System.Drawing.Size(162, 28);
             this.txbSchool.TabIndex = 22;
@@ -200,7 +193,7 @@ namespace CC_Mountain_Biking_Race
             // chbLeg1
             // 
             this.chbLeg1.AutoSize = true;
-            this.chbLeg1.Location = new System.Drawing.Point(154, 200);
+            this.chbLeg1.Location = new System.Drawing.Point(152, 227);
             this.chbLeg1.Name = "chbLeg1";
             this.chbLeg1.Size = new System.Drawing.Size(66, 21);
             this.chbLeg1.TabIndex = 23;
@@ -210,7 +203,7 @@ namespace CC_Mountain_Biking_Race
             // chbLeg2
             // 
             this.chbLeg2.AutoSize = true;
-            this.chbLeg2.Location = new System.Drawing.Point(154, 218);
+            this.chbLeg2.Location = new System.Drawing.Point(152, 245);
             this.chbLeg2.Name = "chbLeg2";
             this.chbLeg2.Size = new System.Drawing.Size(66, 21);
             this.chbLeg2.TabIndex = 24;
@@ -220,7 +213,7 @@ namespace CC_Mountain_Biking_Race
             // chbLeg3
             // 
             this.chbLeg3.AutoSize = true;
-            this.chbLeg3.Location = new System.Drawing.Point(154, 236);
+            this.chbLeg3.Location = new System.Drawing.Point(152, 263);
             this.chbLeg3.Name = "chbLeg3";
             this.chbLeg3.Size = new System.Drawing.Size(66, 21);
             this.chbLeg3.TabIndex = 25;
@@ -230,7 +223,7 @@ namespace CC_Mountain_Biking_Race
             // chbLeg4
             // 
             this.chbLeg4.AutoSize = true;
-            this.chbLeg4.Location = new System.Drawing.Point(154, 254);
+            this.chbLeg4.Location = new System.Drawing.Point(152, 281);
             this.chbLeg4.Name = "chbLeg4";
             this.chbLeg4.Size = new System.Drawing.Size(66, 21);
             this.chbLeg4.TabIndex = 26;
@@ -239,7 +232,7 @@ namespace CC_Mountain_Biking_Race
             // 
             // btnAddRiderTimes
             // 
-            this.btnAddRiderTimes.Location = new System.Drawing.Point(532, 371);
+            this.btnAddRiderTimes.Location = new System.Drawing.Point(802, 463);
             this.btnAddRiderTimes.Name = "btnAddRiderTimes";
             this.btnAddRiderTimes.Size = new System.Drawing.Size(158, 31);
             this.btnAddRiderTimes.TabIndex = 27;
@@ -247,27 +240,60 @@ namespace CC_Mountain_Biking_Race
             this.btnAddRiderTimes.UseVisualStyleBackColor = true;
             this.btnAddRiderTimes.Click += new System.EventHandler(this.btnAddRiderTimes_Click);
             // 
-            // lstvRiderDetails
+            // lvRiderDetails
             // 
-            this.lstvRiderDetails.BackColor = System.Drawing.Color.SeaShell;
-            this.lstvRiderDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstvRiderDetails.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lstvRiderDetails.FullRowSelect = true;
-            this.lstvRiderDetails.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lstvRiderDetails.HideSelection = false;
-            this.lstvRiderDetails.LabelWrap = false;
-            this.lstvRiderDetails.Location = new System.Drawing.Point(338, 136);
-            this.lstvRiderDetails.Name = "lstvRiderDetails";
-            this.lstvRiderDetails.Size = new System.Drawing.Size(469, 139);
-            this.lstvRiderDetails.TabIndex = 28;
-            this.lstvRiderDetails.UseCompatibleStateImageBehavior = false;
+            this.lvRiderDetails.BackColor = System.Drawing.Color.SeaShell;
+            this.lvRiderDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvRiderDetails.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lvRiderDetails.FullRowSelect = true;
+            this.lvRiderDetails.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvRiderDetails.HideSelection = false;
+            this.lvRiderDetails.LabelWrap = false;
+            this.lvRiderDetails.Location = new System.Drawing.Point(17, 316);
+            this.lvRiderDetails.Name = "lvRiderDetails";
+            this.lvRiderDetails.Size = new System.Drawing.Size(779, 178);
+            this.lvRiderDetails.TabIndex = 28;
+            this.lvRiderDetails.UseCompatibleStateImageBehavior = false;
+            this.lvRiderDetails.SelectedIndexChanged += new System.EventHandler(this.lvRiderDetails_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(445, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 29);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Add Rider";
+            // 
+            // lblLegs
+            // 
+            this.lblLegs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegs.Location = new System.Drawing.Point(24, 245);
+            this.lblLegs.Name = "lblLegs";
+            this.lblLegs.Size = new System.Drawing.Size(122, 22);
+            this.lblLegs.TabIndex = 30;
+            this.lblLegs.Text = "Choose Legs:";
+            // 
+            // btnFilterRiders
+            // 
+            this.btnFilterRiders.Location = new System.Drawing.Point(802, 426);
+            this.btnFilterRiders.Name = "btnFilterRiders";
+            this.btnFilterRiders.Size = new System.Drawing.Size(158, 31);
+            this.btnFilterRiders.TabIndex = 31;
+            this.btnFilterRiders.Text = "Filter Riders";
+            this.btnFilterRiders.UseVisualStyleBackColor = true;
+            this.btnFilterRiders.Click += new System.EventHandler(this.btnFilterRiders_Click);
             // 
             // CCMountainBikingRaceDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 531);
-            this.Controls.Add(this.lstvRiderDetails);
+            this.ClientSize = new System.Drawing.Size(972, 531);
+            this.Controls.Add(this.btnFilterRiders);
+            this.Controls.Add(this.lblLegs);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lvRiderDetails);
             this.Controls.Add(this.btnAddRiderTimes);
             this.Controls.Add(this.chbLeg4);
             this.Controls.Add(this.chbLeg3);
@@ -284,10 +310,9 @@ namespace CC_Mountain_Biking_Race
             this.Controls.Add(this.lblRiderName);
             this.Controls.Add(this.btnUpdateRiderName);
             this.Controls.Add(this.btnAddRiderName);
-            this.Controls.Add(this.lstRiderDetails);
             this.Controls.Add(this.lblRiderDetails);
             this.Name = "CCMountainBikingRaceDB";
-            this.Text = "CCMountainBikingRaceDB";
+            this.Text = "AddRider";
             this.Load += new System.EventHandler(this.CCMountainBikingRaceDB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cCMountainBikingDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).EndInit();
@@ -299,7 +324,6 @@ namespace CC_Mountain_Biking_Race
         #endregion
 
         private System.Windows.Forms.Label lblRiderDetails;
-        private System.Windows.Forms.ListBox lstRiderDetails;
         private CCMountainBikingDBDataSet cCMountainBikingDBDataSet;
         private System.Windows.Forms.Button btnAddRiderName;
         private System.Windows.Forms.Button btnUpdateRiderName;
@@ -317,6 +341,9 @@ namespace CC_Mountain_Biking_Race
         private System.Windows.Forms.CheckBox chbLeg3;
         private System.Windows.Forms.CheckBox chbLeg4;
         private System.Windows.Forms.Button btnAddRiderTimes;
-        private System.Windows.Forms.ListView lstvRiderDetails;
+        private System.Windows.Forms.ListView lvRiderDetails;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLegs;
+        private System.Windows.Forms.Button btnFilterRiders;
     }
 }
