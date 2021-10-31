@@ -246,103 +246,108 @@ namespace CC_Mountain_Biking_Race
                 chbLeg4.BackColor = Color.SeaShell;
             }
 
-
-            string query1 = "UPDATE RiderDetails SET FirstName = @RiderName WHERE Id = @RiderId";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query1, connection))
+            if (txbName.Text != "" && Regex.IsMatch(txbName.Text, @"^[a-zA-Z]+$")
+                && txbSurname.Text != "" && Regex.IsMatch(txbSurname.Text, @"^[a-zA-Z]+$")
+                && txbSchool.Text != "" && Regex.IsMatch(txbSchool.Text, @"^[a-zA-Z]+$")
+                && chbLeg1.Checked || chbLeg2.Checked || chbLeg3.Checked || chbLeg4.Checked)
             {
-                connection.Open();
+                string query1 = "UPDATE RiderDetails SET FirstName = @RiderName WHERE Id = @RiderId";
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query1, connection))
+                {
+                    connection.Open();
 
-                command.Parameters.AddWithValue("@RiderName", txbName.Text);
-                command.Parameters.AddWithValue("@RiderId", riderID);
-                command.ExecuteNonQuery();
-                connection.Close();
+                    command.Parameters.AddWithValue("@RiderName", txbName.Text);
+                    command.Parameters.AddWithValue("@RiderId", riderID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                string query2 = "UPDATE RiderDetails SET Surname = @RiderSurname WHERE Id = @RiderId";
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query2, connection))
+                {
+                    connection.Open();
+
+                    command.Parameters.AddWithValue("@RiderSurname", txbSurname.Text);
+                    command.Parameters.AddWithValue("@RiderId", riderID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                string query3 = "UPDATE RiderDetails SET Age = @RiderAge WHERE Id = @RiderId";
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query3, connection))
+                {
+                    connection.Open();
+
+                    command.Parameters.AddWithValue("@RiderAge", nudAge.Value);
+                    command.Parameters.AddWithValue("@RiderId", riderID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                string query4 = "UPDATE RiderDetails SET School = @RiderSchool WHERE Id = @RiderId";
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query4, connection))
+                {
+                    connection.Open();
+
+                    command.Parameters.AddWithValue("@RiderSchool", txbSchool.Text);
+                    command.Parameters.AddWithValue("@RiderId", riderID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                string query5 = "UPDATE RiderDetails SET [Leg 1] = @Leg1 WHERE Id = @RiderId";
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query5, connection))
+                {
+                    connection.Open();
+
+                    command.Parameters.AddWithValue("@Leg1", chbLeg1.Checked);
+                    command.Parameters.AddWithValue("@RiderId", riderID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                string query6 = "UPDATE RiderDetails SET [Leg 2] = @Leg2 WHERE Id = @RiderId";
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query6, connection))
+                {
+                    connection.Open();
+
+                    command.Parameters.AddWithValue("@Leg2", chbLeg2.Checked);
+                    command.Parameters.AddWithValue("@RiderId", riderID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                string query7 = "UPDATE RiderDetails SET [Leg 3] = @Leg3 WHERE Id = @RiderId";
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query7, connection))
+                {
+                    connection.Open();
+
+                    command.Parameters.AddWithValue("@Leg3", chbLeg3.Checked);
+                    command.Parameters.AddWithValue("@RiderId", riderID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                string query8 = "UPDATE RiderDetails SET [Leg 4] = @Leg4 WHERE Id = @RiderId";
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query8, connection))
+                {
+                    connection.Open();
+
+                    command.Parameters.AddWithValue("@Leg4", chbLeg4.Checked);
+                    command.Parameters.AddWithValue("@RiderId", riderID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
             }
             
-            string query2 = "UPDATE RiderDetails SET Surname = @RiderSurname WHERE Id = @RiderId";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query2, connection))
-            {
-                connection.Open();
-
-                command.Parameters.AddWithValue("@RiderSurname", txbSurname.Text);
-                command.Parameters.AddWithValue("@RiderId", riderID);
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            
-            string query3 = "UPDATE RiderDetails SET Age = @RiderAge WHERE Id = @RiderId";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query3, connection))
-            {
-                connection.Open();
-
-                command.Parameters.AddWithValue("@RiderAge", nudAge.Value);
-                command.Parameters.AddWithValue("@RiderId", riderID);
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            
-            string query4 = "UPDATE RiderDetails SET School = @RiderSchool WHERE Id = @RiderId";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query4, connection))
-            {
-                connection.Open();
-
-                command.Parameters.AddWithValue("@RiderSchool", txbSchool.Text);
-                command.Parameters.AddWithValue("@RiderId", riderID);
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            
-            string query5 = "UPDATE RiderDetails SET [Leg 1] = @Leg1 WHERE Id = @RiderId";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query5, connection))
-            {
-                connection.Open();
-
-                command.Parameters.AddWithValue("@Leg1", chbLeg1.Checked);
-                command.Parameters.AddWithValue("@RiderId", riderID);
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            
-            string query6 = "UPDATE RiderDetails SET [Leg 2] = @Leg2 WHERE Id = @RiderId";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query6, connection))
-            {
-                connection.Open();
-
-                command.Parameters.AddWithValue("@Leg2", chbLeg2.Checked);
-                command.Parameters.AddWithValue("@RiderId", riderID);
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            
-            string query7 = "UPDATE RiderDetails SET [Leg 3] = @Leg3 WHERE Id = @RiderId";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query7, connection))
-            {
-                connection.Open();
-
-                command.Parameters.AddWithValue("@Leg3", chbLeg3.Checked);
-                command.Parameters.AddWithValue("@RiderId", riderID);
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            
-            string query8 = "UPDATE RiderDetails SET [Leg 4] = @Leg4 WHERE Id = @RiderId";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query8, connection))
-            {
-                connection.Open();
-
-                command.Parameters.AddWithValue("@Leg4", chbLeg4.Checked);
-                command.Parameters.AddWithValue("@RiderId", riderID);
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-
             PopulateRiders();
         }
 

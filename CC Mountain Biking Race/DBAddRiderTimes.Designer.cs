@@ -69,7 +69,7 @@ namespace CC_Mountain_Biking_Race
             // 
             this.txbRiderSearch.BackColor = System.Drawing.Color.SeaShell;
             this.txbRiderSearch.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.txbRiderSearch.Location = new System.Drawing.Point(132, 96);
+            this.txbRiderSearch.Location = new System.Drawing.Point(160, 96);
             this.txbRiderSearch.Name = "txbRiderSearch";
             this.txbRiderSearch.Size = new System.Drawing.Size(226, 22);
             this.txbRiderSearch.TabIndex = 25;
@@ -110,7 +110,7 @@ namespace CC_Mountain_Biking_Race
             this.lblRiderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRiderName.Location = new System.Drawing.Point(8, 96);
             this.lblRiderName.Name = "lblRiderName";
-            this.lblRiderName.Size = new System.Drawing.Size(122, 22);
+            this.lblRiderName.Size = new System.Drawing.Size(146, 22);
             this.lblRiderName.TabIndex = 30;
             this.lblRiderName.Text = "Search Rider:";
             // 

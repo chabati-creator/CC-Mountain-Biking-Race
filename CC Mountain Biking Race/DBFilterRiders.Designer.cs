@@ -31,16 +31,18 @@ namespace CC_Mountain_Biking_Race
         {
             this.btnAddRider = new System.Windows.Forms.Button();
             this.lblFilterRiders = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxAge = new System.Windows.Forms.ComboBox();
             this.lvRiderDetails = new System.Windows.Forms.ListView();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxSchool = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txbRiderSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddRider
             // 
-            this.btnAddRider.Location = new System.Drawing.Point(757, 362);
+            this.btnAddRider.Location = new System.Drawing.Point(891, 297);
             this.btnAddRider.Name = "btnAddRider";
             this.btnAddRider.Size = new System.Drawing.Size(158, 31);
             this.btnAddRider.TabIndex = 29;
@@ -52,19 +54,20 @@ namespace CC_Mountain_Biking_Race
             // 
             this.lblFilterRiders.AutoSize = true;
             this.lblFilterRiders.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilterRiders.Location = new System.Drawing.Point(376, 22);
+            this.lblFilterRiders.Location = new System.Drawing.Point(460, 24);
             this.lblFilterRiders.Name = "lblFilterRiders";
             this.lblFilterRiders.Size = new System.Drawing.Size(145, 29);
             this.lblFilterRiders.TabIndex = 30;
             this.lblFilterRiders.Text = "Filter Riders";
             // 
-            // comboBox1
+            // cbxAge
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(142, 92);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 31;
+            this.cbxAge.BackColor = System.Drawing.Color.SeaShell;
+            this.cbxAge.FormattingEnabled = true;
+            this.cbxAge.Location = new System.Drawing.Point(126, 139);
+            this.cbxAge.Name = "cbxAge";
+            this.cbxAge.Size = new System.Drawing.Size(121, 24);
+            this.cbxAge.TabIndex = 31;
             // 
             // lvRiderDetails
             // 
@@ -75,53 +78,76 @@ namespace CC_Mountain_Biking_Race
             this.lvRiderDetails.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvRiderDetails.HideSelection = false;
             this.lvRiderDetails.LabelWrap = false;
-            this.lvRiderDetails.Location = new System.Drawing.Point(290, 92);
+            this.lvRiderDetails.Location = new System.Drawing.Point(272, 92);
             this.lvRiderDetails.Name = "lvRiderDetails";
-            this.lvRiderDetails.Size = new System.Drawing.Size(625, 158);
+            this.lvRiderDetails.Size = new System.Drawing.Size(777, 158);
             this.lvRiderDetails.TabIndex = 32;
             this.lvRiderDetails.UseCompatibleStateImageBehavior = false;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 92);
+            this.label4.Location = new System.Drawing.Point(13, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 22);
             this.label4.TabIndex = 33;
             this.label4.Text = "Age:";
             // 
-            // comboBox2
+            // cbxSchool
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(142, 134);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 34;
+            this.cbxSchool.BackColor = System.Drawing.Color.SeaShell;
+            this.cbxSchool.FormattingEnabled = true;
+            this.cbxSchool.Location = new System.Drawing.Point(126, 181);
+            this.cbxSchool.Name = "cbxSchool";
+            this.cbxSchool.Size = new System.Drawing.Size(121, 24);
+            this.cbxSchool.TabIndex = 34;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 136);
+            this.label3.Location = new System.Drawing.Point(13, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 22);
+            this.label3.Size = new System.Drawing.Size(91, 22);
             this.label3.TabIndex = 35;
             this.label3.Text = "School:";
+            // 
+            // txbRiderSearch
+            // 
+            this.txbRiderSearch.BackColor = System.Drawing.Color.SeaShell;
+            this.txbRiderSearch.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.txbRiderSearch.Location = new System.Drawing.Point(126, 92);
+            this.txbRiderSearch.Name = "txbRiderSearch";
+            this.txbRiderSearch.Size = new System.Drawing.Size(128, 22);
+            this.txbRiderSearch.TabIndex = 36;
+            this.txbRiderSearch.TextChanged += new System.EventHandler(this.FilterTxt_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 22);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Name:";
             // 
             // DBFilterRiders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 450);
+            this.ClientSize = new System.Drawing.Size(1082, 357);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txbRiderSearch);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbxSchool);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lvRiderDetails);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxAge);
             this.Controls.Add(this.lblFilterRiders);
             this.Controls.Add(this.btnAddRider);
             this.Name = "DBFilterRiders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FilterRiders";
+            this.Load += new System.EventHandler(this.DBFilterRiders_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,10 +157,12 @@ namespace CC_Mountain_Biking_Race
 
         private System.Windows.Forms.Button btnAddRider;
         private System.Windows.Forms.Label lblFilterRiders;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxAge;
         private System.Windows.Forms.ListView lvRiderDetails;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxSchool;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txbRiderSearch;
+        private System.Windows.Forms.Label label1;
     }
 }

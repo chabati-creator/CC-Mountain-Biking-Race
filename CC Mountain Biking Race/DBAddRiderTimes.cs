@@ -106,7 +106,7 @@ namespace CC_Mountain_Biking_Race
             lvRiderDetails.Items.Clear();
             foreach (DataRow row in dvw.ToTable().Rows)
             {
-                lvRiderDetails.Items.Add(new ListViewItem(new String[] {row[0].ToString(), row[1].ToString(), row[2].ToString(),
+                lvRiderDetails.Items.Add(new ListViewItem(new String[] {row[1].ToString(), row[2].ToString(),
                     row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString(), row[7].ToString(), row[8].ToString()}));
             }
 
