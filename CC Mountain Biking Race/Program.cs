@@ -21,7 +21,7 @@ namespace CC_Mountain_Biking_Race
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Homepage(rm));
-            Application.Run(new CCMountainBikingRaceDB());
+            Application.Run(new DBLoginPage());
         }
     }
 }

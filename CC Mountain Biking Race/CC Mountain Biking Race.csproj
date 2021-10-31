@@ -81,17 +81,23 @@
       <DependentUpon>CCMountainBikingDBDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="CCMountainBikingRaceDB.cs">
+    <Compile Include="DBAddRider.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CCMountainBikingRaceDB.Designer.cs">
-      <DependentUpon>CCMountainBikingRaceDB.cs</DependentUpon>
+    <Compile Include="DBAddRider.Designer.cs">
+      <DependentUpon>DBAddRider.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCMountainBikingRaceDBAddRiderTimes.cs">
+    <Compile Include="DBAddRiderTimes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CCMountainBikingRaceDBAddRiderTimes.Designer.cs">
-      <DependentUpon>CCMountainBikingRaceDBAddRiderTimes.cs</DependentUpon>
+    <Compile Include="DBAddRiderTimes.Designer.cs">
+      <DependentUpon>DBAddRiderTimes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBLoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBLoginPage.Designer.cs">
+      <DependentUpon>DBLoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Export.cs">
       <SubType>Form</SubType>
@@ -99,11 +105,11 @@
     <Compile Include="Export.Designer.cs">
       <DependentUpon>Export.cs</DependentUpon>
     </Compile>
-    <Compile Include="FilterRiders.cs">
+    <Compile Include="DBFilterRiders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FilterRiders.Designer.cs">
-      <DependentUpon>FilterRiders.cs</DependentUpon>
+    <Compile Include="DBFilterRiders.Designer.cs">
+      <DependentUpon>DBFilterRiders.cs</DependentUpon>
     </Compile>
     <Compile Include="Help.cs">
       <SubType>Form</SubType>
@@ -155,17 +161,20 @@
     <EmbeddedResource Include="AllCompetitorResults.resx">
       <DependentUpon>AllCompetitorResults.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCMountainBikingRaceDB.resx">
-      <DependentUpon>CCMountainBikingRaceDB.cs</DependentUpon>
+    <EmbeddedResource Include="DBAddRider.resx">
+      <DependentUpon>DBAddRider.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCMountainBikingRaceDBAddRiderTimes.resx">
-      <DependentUpon>CCMountainBikingRaceDBAddRiderTimes.cs</DependentUpon>
+    <EmbeddedResource Include="DBAddRiderTimes.resx">
+      <DependentUpon>DBAddRiderTimes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBLoginPage.resx">
+      <DependentUpon>DBLoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Export.resx">
       <DependentUpon>Export.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FilterRiders.resx">
-      <DependentUpon>FilterRiders.cs</DependentUpon>
+    <EmbeddedResource Include="DBFilterRiders.resx">
+      <DependentUpon>DBFilterRiders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
