@@ -81,7 +81,33 @@ namespace CC_Mountain_Biking_Race
 
         private void DBFilterRiders_Load(object sender, EventArgs e)
         {
+            cbxSchool.Items.Clear();
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT DISTINCT School FROM RiderDetails ORDER BY School ASC", connection))
+            {
+                DataTable riderDetailsTable = new DataTable();
+                adapter.Fill(riderDetailsTable);
+
+                //Loop through the DataTable.
+                foreach (DataRow row in riderDetailsTable.Rows)
+                {
+                    //Add Item to ComboBox.
+                    cbxSchool.Items.Add(row["School"].ToString());
+                    //ComboBoxItem item = new ComboBoxItem(row[1].ToString());
+                    //item.SubItems.Add(row[2].ToString());
+                    //cbxSchool.Items.Add(item);
+                }
+
+            }
+            connection.Close();
+
+            cbxAge.Items.Add("Greater than");
+            cbxAge.Items.Add("Less than");
+
             PopulateRiders();
+
+            nudAge.Enabled = false;
+            btnFilterRiders.Enabled = false;
         }
 
         private void PopulateListView(DataView dvw)
@@ -99,6 +125,103 @@ namespace CC_Mountain_Biking_Race
         {
             dv.RowFilter = string.Format("FirstName Like '%{0}%'", txbRiderSearch.Text); // Code from https://www.youtube.com/watch?v=cycavkXug5U
             PopulateListView(dv);
+        }
+
+        private void btnFilterRiders_Click(object sender, EventArgs e)
+        {
+            //string query = "SELECT * FROM RiderDetails WHERE School = '" + cbxSchool.SelectedItem.ToString() + "'";
+
+            //lvRiderDetails.Items.Clear();
+
+            //using (connection = new SqlConnection(connectionString))
+            //using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+            //{
+            //    DataTable riderDetailsTable = new DataTable();
+            //    adapter.Fill(riderDetailsTable);
+
+            //    //Loop through the DataTable.
+            //    foreach (DataRow row in riderDetailsTable.Rows)
+            //    {
+            //        //Add Item to ListView.
+            //        ListViewItem item = new ListViewItem(row[1].ToString());
+            //        item.SubItems.Add(row[2].ToString());
+            //        item.SubItems.Add(row[3].ToString());
+            //        item.SubItems.Add(row[4].ToString());
+            //        item.SubItems.Add(row[5].ToString());
+            //        item.SubItems.Add(row[6].ToString());
+            //        item.SubItems.Add(row[7].ToString());
+            //        item.SubItems.Add(row[8].ToString());
+            //        lvRiderDetails.Items.Add(item);
+            //    }
+
+            //}
+            //connection.Close();
+
+
+            string query = "SELECT * FROM RiderDetails WHERE ";
+
+            if (!cbxAge.Text.Equals("Select Option"))
+            {
+                if (cbxAge.Text == "Greater than")
+                {
+                    query += "Age > '" + nudAge.Value + "'";
+                }
+                else
+                {
+                    query += "Age < '" + nudAge.Value + "'";
+                }
+
+                if (!cbxSchool.Text.Equals("Select Option"))
+                {
+                    query += " AND School = '" + cbxSchool.SelectedItem.ToString() + "'";
+                }
+            }
+            else
+            {
+                query += "School = '" + cbxSchool.SelectedItem.ToString() + "'";
+            }
+            
+            //query += "School = '" + cbxSchool.SelectedItem.ToString() + "'";
+
+            //string query1 = "SELECT * FROM RiderDetails WHERE Age > '" + nudAge.Value + "'";
+
+            lvRiderDetails.Items.Clear();
+
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+            {
+                DataTable riderDetailsTable = new DataTable();
+                adapter.Fill(riderDetailsTable);
+
+                //Loop through the DataTable.
+                foreach (DataRow row in riderDetailsTable.Rows)
+                {
+                    //Add Item to ListView.
+                    ListViewItem item = new ListViewItem(row[1].ToString());
+                    item.SubItems.Add(row[2].ToString());
+                    item.SubItems.Add(row[3].ToString());
+                    item.SubItems.Add(row[4].ToString());
+                    item.SubItems.Add(row[5].ToString());
+                    item.SubItems.Add(row[6].ToString());
+                    item.SubItems.Add(row[7].ToString());
+                    item.SubItems.Add(row[8].ToString());
+                    lvRiderDetails.Items.Add(item);
+                }
+
+            }
+            connection.Close();
+
+        }
+
+        private void cbxAge_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudAge.Enabled = true;
+            btnFilterRiders.Enabled = true;
+        }
+
+        private void cbxSchool_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnFilterRiders.Enabled = true;
         }
     }
 }
